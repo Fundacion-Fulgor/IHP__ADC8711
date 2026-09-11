@@ -8,7 +8,7 @@
   "sealring_x": 1.5,
   "sealring_y": 1.5,
   "repository": "https://github.com/paubrizzio/IHP__ADC8711.git",
-  "pdk_version": "3d20771",
+  "pdk_version": "cfc0e22",
   "process": "SG13G2",
   "dependencies": {},
   "tools": {
