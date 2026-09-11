@@ -43,10 +43,18 @@ This whole structure already exists in the repo (the script generated it) — no
 
 ## 3. How to upload files (git)
 
-Each person uploading their part clones the repo, adds their files to the corresponding folder, and pushes:
+This repo includes the PDK (`IHP-Open-PDK`) and the IO-cell library (`openpdk-libraries`) as submodules, pinned to fixed commits for reproducibility — clone with `--recursive` so they come along:
 
 ```bash
-git clone git@github.com:paubrizzio/IHP__ADC8711.git
+git clone --recursive git@github.com:paubrizzio/IHP__ADC8711.git
+cd IHP__ADC8711
+```
+
+If you already had the repo cloned before the submodules were added, just run `git pull && git submodule update --init --recursive` instead of cloning again.
+
+Each person uploading their part adds their files to the corresponding folder, and pushes:
+
+```bash
 cd IHP__ADC8711
 
 # copy your own files into the corresponding folder under ADC8711-main/...
