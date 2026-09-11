@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -31,20 +32,122 @@ def is_inside_container_or_native(args_native: bool) -> bool:
     return False
 
 
-def reexec_in_container(argv_forward: list[str]) -> int:
-    container = os.environ.get("EDA_CONTAINER", DEFAULT_CONTAINER)
-    abs_script = str(Path(__file__).resolve())
-    cmd = ["distrobox", "enter", container, "--", "python3", abs_script, "--native"] + argv_forward
-    env = os.environ.copy()
-    env["EDA_CONTAINER_ACTIVE"] = "1"
+def get_designs_host_root() -> Path:
+    """Directorio del host que start_x.sh monta como /foss/designs en el contenedor."""
+    env_designs = os.environ.get("DESIGNS")
+    if env_designs:
+        return Path(env_designs).resolve()
+    conf_file = Path(
+        os.environ.get(
+            "IIC_OSIC_TOOLS_CONF",
+            str(Path.home() / ".config" / "iic-osic-tools" / "env"),
+        )
+    )
+    if conf_file.is_file():
+        try:
+            for line in conf_file.read_text().splitlines():
+                line = line.strip()
+                if line.startswith("DESIGNS="):
+                    val = line.split("=", 1)[1].strip().strip('"').strip("'")
+                    if val:
+                        return Path(val).resolve()
+        except OSError:
+            pass
+    return (Path.home() / "eda" / "designs").resolve()
+
+
+def to_container_path(repo_root: Path) -> str | None:
+    """Traduce la ruta del repo en el host a su equivalente dentro del contenedor de start_x.sh."""
+    designs_host = get_designs_host_root()
     try:
+        rel = repo_root.relative_to(designs_host)
+    except ValueError:
+        return None
+    rel_str = str(rel)
+    return "/foss/designs" if rel_str == "." else f"/foss/designs/{rel_str}"
+
+
+def find_distrobox_container(container: str) -> bool:
+    if shutil.which("distrobox") is None:
+        return False
+    try:
+        proc = subprocess.run(
+            ["distrobox", "list"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+        )
+    except FileNotFoundError:
+        return False
+    return proc.returncode == 0 and container in proc.stdout
+
+
+def find_start_x_container() -> tuple[str, str] | None:
+    """Busca un contenedor corriendo, creado por start_x.sh (docker o podman), para el UID actual."""
+    name = f"iic-osic-tools_xserver_uid_{os.getuid()}"
+    for engine in ("docker", "podman"):
+        if shutil.which(engine) is None:
+            continue
+        try:
+            proc = subprocess.run(
+                [engine, "ps", "--format", "{{.Names}}"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+            )
+        except FileNotFoundError:
+            continue
+        if proc.returncode == 0 and name in proc.stdout.split():
+            return engine, name
+    return None
+
+
+def reexec_in_container(argv_forward: list[str]) -> int:
+    repo_root = get_repo_root()
+    forced_backend = os.environ.get("EDA_BACKEND", "").strip().lower()
+    abs_script = str(Path(__file__).resolve())
+
+    container = os.environ.get("EDA_CONTAINER", DEFAULT_CONTAINER)
+    try_distrobox = forced_backend in ("", "distrobox")
+    try_start_x = forced_backend in ("", "docker", "podman", "start_x")
+
+    if try_distrobox and find_distrobox_container(container):
+        cmd = ["distrobox", "enter", container, "--", "python3", abs_script, "--native"] + argv_forward
+        env = os.environ.copy()
+        env["EDA_CONTAINER_ACTIVE"] = "1"
         res = subprocess.run(cmd, env=env)
         return res.returncode
-    except FileNotFoundError:
-        sys.stderr.write(
-            "Error: No se encontró la herramienta 'distrobox'. Instale distrobox o use '--native' (o configure EDA_NATIVE=1) para ejecución local.\n"
-        )
-        return 1
+
+    if try_start_x:
+        found = find_start_x_container()
+        if found:
+            engine, container_name = found
+            container_repo = to_container_path(repo_root)
+            if container_repo is None:
+                sys.stderr.write(
+                    f"Error: El repositorio ({repo_root}) no está dentro del directorio que "
+                    f"start_x.sh montó como /foss/designs (host: {get_designs_host_root()}).\n"
+                    "Mueva/clone el repo ahí adentro, o vuelva a correr start_x.sh con "
+                    f"'export DESIGNS={repo_root.parent}' (borrando antes el contenedor viejo "
+                    "con '<motor> rm " + container_name + "').\n"
+                )
+                return 1
+            container_script = f"{container_repo}/eda"
+            cmd = [
+                engine, "exec", "-it", "-w", container_repo, container_name,
+                "python3", container_script, "--native",
+            ] + argv_forward
+            res = subprocess.run(cmd)
+            return res.returncode
+
+    sys.stderr.write(
+        "Error: No se encontró un entorno EDA disponible.\n"
+        f"Opción A: cree el contenedor de distrobox con 'distrobox create --name {container} "
+        "--image hpretl/iic-osic-tools:latest'.\n"
+        "Opción B: clone iic-jku/IIC-OSIC-TOOLS y corra su start_x.sh (verifique que DESIGNS "
+        f"incluya {repo_root}).\n"
+    )
+    return 1
 
 
 def check_submodules_clean_and_aligned(repo_root: Path) -> tuple[bool, str]:
@@ -196,6 +299,13 @@ def cmd_setup(repo_root: Path) -> int:
 def cmd_doctor(repo_root: Path) -> int:
     success = True
     print("Verificando entorno EDA en ADC8711...")
+
+    if os.environ.get("EDA_CONTAINER_ACTIVE") == "1":
+        print("[OK] Backend: distrobox (dentro del contenedor iic-osic-tools2)")
+    elif get_designs_host_root() in repo_root.parents or get_designs_host_root() == repo_root:
+        print(f"[OK] Backend: start_x.sh / IIC-OSIC-TOOLS (montado desde {get_designs_host_root()})")
+    else:
+        print("[INFO] Backend: ejecución nativa (--native / EDA_NATIVE=1) o fuera de un contenedor conocido")
 
     ok, msg = check_submodules_clean_and_aligned(repo_root)
     if ok:
@@ -395,7 +505,7 @@ def main(argv: list[str] | None = None) -> int:
         "--native",
         action="store_true",
         default=False,
-        help="Ejecuta los comandos EDA directamente en el host sin usar distrobox.",
+        help="Ejecuta los comandos EDA directamente en el host sin usar un contenedor.",
     )
     subparsers = parser.add_subparsers(dest="command", metavar="COMANDO")
 
