@@ -46,7 +46,7 @@ Toda esta estructura ya existe en el repo (la generó el script), no hay que cre
 Cada persona que va a subir su parte clona el repo, agrega sus archivos en la carpeta que corresponde, y hace push:
 
 ```bash
-git clone git@github.com:<usuario-u-org>/IHP__ADC8711.git
+git clone git@github.com:paubrizzio/IHP__ADC8711.git
 cd IHP__ADC8711
 
 # copiar los archivos propios a la carpeta correspondiente de ADC8711-main/...
