@@ -10,7 +10,7 @@ GitHub is the online platform hosting this repository. It lets the team store fi
 
 Once logged in, go to:
 ```
-https://github.com/<user-or-org>/IHP__ADC8711
+https://github.com/paubrizzio/IHP__ADC8711.git
 ```
 
 ## 3. The Code tab
@@ -54,7 +54,7 @@ Nobody pushes directly to `main` — every change goes through a branch and a PR
 4. Add the printed key to GitHub: **Settings → SSH and GPG keys → New SSH key**.
 5. Clone the repository:
    ```bash
-   git clone git@github.com:<user-or-org>/IHP__ADC8711.git
+   git clone git@github.com:paubrizzio/IHP__ADC8711.git
    cd IHP__ADC8711
    ```
 
