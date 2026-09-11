@@ -1,0 +1,18 @@
+# Salidas generadas de simulación y extracción (no committear)
+runs/
+*.raw
+*.log
+*.out
+*.cir
+
+# Archivos de respaldo y temporales
+*~
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Cache de Python
+__pycache__/
+*.py[cod]
