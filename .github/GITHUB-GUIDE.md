@@ -10,7 +10,7 @@ GitHub is the online platform hosting this repository. It lets the team store fi
 
 Once logged in, go to:
 ```
-https://github.com/paubrizzio/IHP__ADC8711.git
+https://github.com/Fundacion-Fulgor/IHP__ADC8711.git
 ```
 
 ## 3. The Code tab
