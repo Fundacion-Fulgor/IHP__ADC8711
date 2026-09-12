@@ -46,7 +46,7 @@ This whole structure already exists in the repo (the script generated it) — no
 This repo includes the PDK (`IHP-Open-PDK`) and the IO-cell library (`openpdk-libraries`) as submodules, pinned to fixed commits for reproducibility — clone with `--recursive` so they come along:
 
 ```bash
-git clone --recursive git@github.com:paubrizzio/IHP__ADC8711.git
+git clone --recursive git@github.com:Fundacion-Fulgor/IHP__ADC8711.git
 cd IHP__ADC8711
 ```
 
