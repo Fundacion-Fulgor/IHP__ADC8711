@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 600 -350 600 -310 {lab=VSS}
 N 640 -490 640 -450 {lab=VDD}
@@ -29,11 +30,11 @@ N 330 -600 510 -600 {lab=#net1}
 N 510 -390 510 -180 {lab=#net2}
 N 330 -180 510 -180 {lab=#net2}
 C {iopin.sym} 160 -450 2 0 {name=p5 lab=VSS}
-C {/foss/designs/GRO-TDC/std_cells/MUX_2_1_NI.sym} 560 -320 0 0 {name=x7}
+C {MUX_2_1_NI.sym} 560 -320 0 0 {name=x7}
 C {opin.sym} 790 -400 0 0 {name=p34 lab=VOUT}
 C {iopin.sym} 240 -750 2 0 {name=p35 lab=VDD}
-C {/foss/designs/GRO-TDC/std_cells/MUX_4_1_NI.sym} 30 -450 0 0 {name=x8}
-C {/foss/designs/GRO-TDC/std_cells/MUX_4_1_NI.sym} 30 -30 0 0 {name=x9}
+C {MUX_4_1_NI.sym} 30 -450 0 0 {name=x8}
+C {MUX_4_1_NI.sym} 30 -30 0 0 {name=x9}
 C {ipin.sym} 80 -660 0 0 {name=p37 lab=VINA}
 C {ipin.sym} 80 -620 0 0 {name=p38 lab=VINB}
 C {ipin.sym} 80 -580 0 0 {name=p39 lab=VINC}
