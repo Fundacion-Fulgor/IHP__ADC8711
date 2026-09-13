@@ -23,7 +23,7 @@ N 1060 -690 1080 -690 {lab=DRV_RESET}
 N 880 -760 940 -760 {lab=#net1}
 N 880 -740 960 -740 {lab=#net2}
 N 880 -720 980 -720 {lab=#net3}
-N 620 -690 640 -690 {lab=DECLK}
+N 620 -690 640 -690 {lab=DRV_RESET}
 N 600 -720 640 -720 {lab=K2}
 N 580 -740 640 -740 {lab=K1}
 N 560 -760 640 -760 {lab=K0}
@@ -132,8 +132,7 @@ C {lab_wire.sym} 560 -760 3 0 {name=p17 sig_type=std_logic lab=K0
 }
 C {lab_wire.sym} 600 -720 3 0 {name=p19 sig_type=std_logic lab=K2
 }
-C {lab_wire.sym} 620 -690 3 0 {name=p20 sig_type=std_logic lab=DECLK
-}
+C {lab_wire.sym} 620 -690 3 0 {name=p20 sig_type=std_logic lab=DRV_RESET}
 C {lab_wire.sym} 1040 -710 3 0 {name=p21 sig_type=std_logic lab=DECLK
 }
 C {lab_wire.sym} 1060 -690 3 0 {name=p22 sig_type=std_logic lab=DRV_RESET
@@ -168,7 +167,7 @@ C {lab_wire.sym} 1200 -360 0 0 {name=p37 sig_type=std_logic lab=VSS
 }
 C {lab_wire.sym} 1040 -470 3 0 {name=p34 sig_type=std_logic lab=DECLK2
 }
-C {lab_wire.sym} 1060 -430 3 0 {name=p38 sig_type=std_logic lab=RESET
+C {lab_wire.sym} 1060 -430 3 0 {name=p38 sig_type=std_logic lab=DRV_RESET
 }
 C {Counters__FA_regs_7bits.sym} 1040 -350 0 0 {name=x9
 }
