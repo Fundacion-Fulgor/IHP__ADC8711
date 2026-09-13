@@ -4,6 +4,7 @@ runs/
 *.log
 *.out
 *.cir
+lvs_run_*
 
 # Archivos de respaldo y temporales
 *~
