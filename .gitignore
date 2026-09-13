@@ -16,3 +16,4 @@ Thumbs.db
 # Cache de Python
 __pycache__/
 *.py[cod]
+*:Zone.Identifier
