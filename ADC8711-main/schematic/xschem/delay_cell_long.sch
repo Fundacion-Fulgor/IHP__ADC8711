@@ -42,9 +42,6 @@ C {ipin.sym} -460 -120 0 0 {name=p2 lab=IN}
 C {iopin.sym} -350 -120 0 1 {name=p3 lab=VDD}
 C {iopin.sym} -350 -90 0 1 {name=p5 lab=VSS}
 C {opin.sym} -220 -120 0 1 {name=p6 lab=OUT1}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog.sym} -320 140 0 0 {name=x1}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog.sym} 0 140 0 0 {name=x2}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog.sym} 320 140 0 0 {name=x3}
 C {lab_wire.sym} -20 40 0 0 {name=p7 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 300 40 0 0 {name=p8 sig_type=std_logic lab=VDD
@@ -65,3 +62,6 @@ C {lab_wire.sym} -160 180 3 0 {name=p16 sig_type=std_logic lab=CTRL[2:0]
 }
 C {lab_wire.sym} 160 180 3 0 {name=p17 sig_type=std_logic lab=CTRL[2:0]
 }
+C {delay_prog.sym} -320 140 0 0 {name=x1}
+C {delay_prog.sym} 0 140 0 0 {name=x2}
+C {delay_prog.sym} 320 140 0 0 {name=x3}

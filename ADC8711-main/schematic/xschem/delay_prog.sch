@@ -68,7 +68,7 @@ N 3100 -160 3160 -160 {lab=OUT8}
 N 3120 -120 3160 -120 {lab=CTRL[2:0]}
 N 3280 -240 3280 -200 {lab=VDD}
 N 3280 -80 3280 -40 {lab=VSS}
-N 4080 -140 4140 -140 {lab=OUT0}
+N 4080 -140 4140 -140 {lab=OUT}
 N 3400 -140 3440 -140 {lab=OUT9}
 N 3440 -160 3440 -140 {lab=OUT9}
 N 3440 -160 3500 -160 {lab=OUT9}
@@ -85,65 +85,65 @@ C {ipin.sym} -100 -160 0 0 {name=p40 lab=IN}
 C {iopin.sym} -260 -140 0 1 {name=p46 lab=VDD}
 C {iopin.sym} -260 -100 0 1 {name=p47 lab=VSS}
 C {ipin.sym} -260 -60 0 0 {name=p70 lab=CTRL[2:0]}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 240 -120 0 0 {name=x1}
+C {delay_prog_sub.sym} 240 -120 0 0 {name=x1}
 C {lab_wire.sym} 220 -240 0 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 60 -160 0 0 {name=p2 sig_type=std_logic lab=IN}
 C {lab_wire.sym} 60 -120 0 0 {name=p3 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 220 -40 0 0 {name=p4 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 380 -160 3 1 {name=p5 sig_type=std_logic lab=OUT0}
 C {opin.sym} -100 -120 2 0 {name=p6 lab=OUT}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 580 -120 0 0 {name=x2}
+C {delay_prog_sub.sym} 580 -120 0 0 {name=x2}
 C {lab_wire.sym} 400 -120 3 0 {name=p7 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 560 -240 0 0 {name=p8 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 560 -40 0 0 {name=p9 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 720 -160 3 1 {name=p10 sig_type=std_logic lab=OUT1}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 920 -120 0 0 {name=x3}
+C {delay_prog_sub.sym} 920 -120 0 0 {name=x3}
 C {lab_wire.sym} 740 -120 3 0 {name=p11 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 900 -240 0 0 {name=p12 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 900 -40 0 0 {name=p13 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1060 -160 3 1 {name=p14 sig_type=std_logic lab=OUT2}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 1260 -120 0 0 {name=x4}
+C {delay_prog_sub.sym} 1260 -120 0 0 {name=x4}
 C {lab_wire.sym} 1080 -120 3 0 {name=p15 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 1240 -240 0 0 {name=p16 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1240 -40 0 0 {name=p17 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1400 -160 3 1 {name=p18 sig_type=std_logic lab=OUT3}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 1600 -120 0 0 {name=x5}
+C {delay_prog_sub.sym} 1600 -120 0 0 {name=x5}
 C {lab_wire.sym} 1420 -120 3 0 {name=p19 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 1580 -240 0 0 {name=p20 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1580 -40 0 0 {name=p21 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1740 -160 3 1 {name=p22 sig_type=std_logic lab=OUT4}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 1940 -120 0 0 {name=x6}
+C {delay_prog_sub.sym} 1940 -120 0 0 {name=x6}
 C {lab_wire.sym} 1760 -120 3 0 {name=p23 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 1920 -240 0 0 {name=p24 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1920 -40 0 0 {name=p25 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 2080 -160 3 1 {name=p26 sig_type=std_logic lab=OUT5}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 2280 -120 0 0 {name=x7}
+C {delay_prog_sub.sym} 2280 -120 0 0 {name=x7}
 C {lab_wire.sym} 2100 -120 3 0 {name=p27 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 2260 -240 0 0 {name=p28 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 2260 -40 0 0 {name=p29 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 2420 -160 3 1 {name=p30 sig_type=std_logic lab=OUT6}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 2620 -120 0 0 {name=x8}
+C {delay_prog_sub.sym} 2620 -120 0 0 {name=x8}
 C {lab_wire.sym} 2440 -120 3 0 {name=p31 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 2600 -240 0 0 {name=p32 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 2600 -40 0 0 {name=p33 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 2760 -160 3 1 {name=p34 sig_type=std_logic lab=OUT7}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 2960 -120 0 0 {name=x9}
+C {delay_prog_sub.sym} 2960 -120 0 0 {name=x9}
 C {lab_wire.sym} 2780 -120 3 0 {name=p35 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 2940 -240 0 0 {name=p36 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 2940 -40 0 0 {name=p37 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 3100 -160 3 1 {name=p38 sig_type=std_logic lab=OUT8}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 3300 -120 0 0 {name=x10}
+C {delay_prog_sub.sym} 3300 -120 0 0 {name=x10}
 C {lab_wire.sym} 3120 -120 3 0 {name=p39 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 3280 -240 0 0 {name=p41 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 3280 -40 0 0 {name=p42 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 4140 -140 0 1 {name=p43 sig_type=std_logic lab=OUT}
 C {lab_wire.sym} 3440 -160 3 1 {name=p44 sig_type=std_logic lab=OUT9}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 3640 -120 0 0 {name=x11}
+C {delay_prog_sub.sym} 3640 -120 0 0 {name=x11}
 C {lab_wire.sym} 3460 -120 3 0 {name=p45 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 3620 -240 0 0 {name=p48 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 3620 -40 0 0 {name=p49 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 3780 -160 3 1 {name=p50 sig_type=std_logic lab=OUT10}
-C {/foss/designs/GRO-TDC/std_cells/delay_prog_sub.sym} 3980 -120 0 0 {name=x12}
+C {delay_prog_sub.sym} 3980 -120 0 0 {name=x12}
 C {lab_wire.sym} 3800 -120 3 0 {name=p51 sig_type=std_logic lab=CTRL[2:0]}
 C {lab_wire.sym} 3960 -240 0 0 {name=p52 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 3960 -40 0 0 {name=p53 sig_type=std_logic lab=VSS}
