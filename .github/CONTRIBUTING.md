@@ -50,7 +50,7 @@ git clone --recursive git@github.com:Fundacion-Fulgor/IHP__ADC8711.git
 cd IHP__ADC8711
 ```
 
-If you already had the repo cloned before the submodules were added, just run `git pull && git submodule update --init --recursive` instead of cloning again.
+If you already had the repo cloned before submodules or hooks were introduced, run `./eda setup` to initialize submodules and install the pre-commit hook. On existing clones where submodules are already configured, run `./eda install-hooks` to install the pre-commit hook only (without touching submodules).
 
 Each person uploading their part adds their files to the corresponding folder, and pushes:
 
@@ -60,6 +60,7 @@ cd IHP__ADC8711
 # copy your own files into the corresponding folder under ADC8711-main/...
 
 git add .
+./eda check-paths --staged
 git commit -s -m "Add <block>: brief description of what's being uploaded"
 git push
 ```
@@ -81,5 +82,22 @@ Recommendation: one commit per block/delivery (e.g. "Add GRO schematic + AC test
 - [ ] The top cell is named `ADC8711` in the file I'm uploading (if it's a top-level view)
 - [ ] The file is in the correct folder from the table in section 2
 - [ ] The file name uses `ADC8711` if it's a top-level view (GDS, top netlist, DRC/LVS reports)
+- [ ] Path portability verified (`git add .` then `./eda check-paths --staged` passes with no personal paths)
 - [ ] I did not touch `doc/info.json` or the folder structure
 - [ ] The commit message says which block/file is being added
+
+---
+
+## 6. Path portability and pre-commit checks
+
+To ensure portability across different contributor workstations and CI environments, Xschem schematics (`.sch`) and symbols (`.sym`) must adhere to path portability rules:
+
+- **Allowed references and valid contexts**:
+  - **Bare symbols and library-relative names (default)**: Used for symbol and schematic instantiations (e.g. `Counters_6bits.sym`, `sg13g2_IOPadAnalog.sym`).
+  - **`$netlist_dir`**: Valid in Tcl launcher scripts and netlist/raw output directory configuration.
+  - **`$PDK_ROOT` / `$PDK`**: Valid only within `tcleval` SPICE model include and library directives.
+  - **Prohibited**: Hardcoded personal user paths (such as `/home/username/...` or `/Users/...`).
+- **Validation scope**: Rules scope source dependency references (instantiated symbols and subcircuit schematics) and tracked `.spice`/`.cir` include directives, not tool-generated provenance comments.
+- **Hook automation**: Running `./eda setup` initializes submodules and automatically installs the shared Git pre-commit hook. Existing clones can run `./eda install-hooks` to configure the hook only (without touching submodules or requiring EDA containers/PDKs).
+- **Local checking**: Run `./eda check-paths` to inspect tracked files or `./eda check-paths --staged` to inspect staged changes after `git add`.
+- **CI enforcement**: Because local Git hooks can be bypassed (e.g., via `git commit --no-verify`), repository administrators should configure the `Xschem path portability` CI workflow job as a required status check in GitHub branch protection rules (a manual admin setting).

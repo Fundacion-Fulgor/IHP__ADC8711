@@ -290,10 +290,173 @@ def cmd_setup(repo_root: Path) -> int:
             check=True,
         )
         print("Submódulos inicializados y actualizados correctamente según los gitlinks registrados.")
-        return 0
     except subprocess.CalledProcessError as e:
         sys.stderr.write(f"Error al actualizar los submódulos: {e}\n")
         return 1
+
+    return cmd_install_hooks(repo_root)
+
+
+def cmd_check_paths(repo_root: Path, staged: bool = False) -> int:
+    checker = repo_root / "scripts" / "check_xschem_paths.py"
+    if not checker.is_file():
+        sys.stderr.write(f"Error: Script verificador no encontrado: {checker}\n")
+        return 1
+    cmd = [sys.executable, str(checker)]
+    if staged:
+        cmd.append("--staged")
+    proc = subprocess.run(cmd, cwd=str(repo_root))
+    return proc.returncode
+
+
+def cmd_install_hooks(repo_root: Path) -> int:
+    src_hook = repo_root / ".githooks" / "pre-commit"
+    if not src_hook.is_file():
+        sys.stderr.write(f"Error: Archivo de hook no encontrado: {src_hook}\n")
+        return 1
+
+    if not os.access(src_hook, os.X_OK):
+        sys.stderr.write(f"Error: {src_hook} no es ejecutable.\n")
+        return 1
+
+    try:
+        proc_hp = subprocess.run(
+            ["git", "config", "core.hooksPath"],
+            cwd=str(repo_root),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError) as e:
+        sys.stderr.write(f"Error al verificar git config: {e}\n")
+        return 1
+
+    if proc_hp.returncode not in (0, 1):
+        sys.stderr.write(f"Error al consultar git config (código {proc_hp.returncode}): {proc_hp.stderr.strip()}\n")
+        return 1
+
+    if proc_hp.returncode == 0 and proc_hp.stdout.strip():
+        hooks_path_val = proc_hp.stdout.strip()
+        configured_hp = Path(hooks_path_val).expanduser()
+        if not configured_hp.is_absolute():
+            configured_hp = (repo_root / configured_hp).resolve()
+        else:
+            configured_hp = configured_hp.resolve()
+        project_githooks = (repo_root / ".githooks").resolve()
+        if configured_hp == project_githooks:
+            if not os.access(src_hook, os.X_OK):
+                sys.stderr.write(f"Error: core.hooksPath apunta a {project_githooks} pero {src_hook} no es ejecutable.\n")
+                return 1
+            print(f"core.hooksPath ya configurado hacia {project_githooks}.")
+            return 0
+        chaining = 'python3 "$(git rev-parse --show-toplevel)/scripts/check_xschem_paths.py" --staged'
+        sys.stderr.write(
+            f"Aviso: core.hooksPath personalizado activo ({hooks_path_val}). No se modificará el directorio compartido/global.\n"
+            f"Integración manual requerida: agregue la siguiente invocación a su hook pre-commit:\n"
+            f"  {chaining}\n"
+        )
+        return 1
+
+    hooks_dir = None
+    try:
+        proc_gp = subprocess.run(
+            ["git", "rev-parse", "--git-path", "hooks"],
+            cwd=str(repo_root),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True,
+        )
+        hooks_path_out = proc_gp.stdout.strip()
+        if hooks_path_out:
+            p = Path(hooks_path_out)
+            hooks_dir = p.resolve() if p.is_absolute() else (repo_root / p).resolve()
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        pass
+
+    if hooks_dir is None:
+        try:
+            proc_common = subprocess.run(
+                ["git", "rev-parse", "--git-common-dir"],
+                cwd=str(repo_root),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                check=True,
+            )
+            common_out = proc_common.stdout.strip()
+            if common_out:
+                p = Path(common_out)
+                common_dir = p.resolve() if p.is_absolute() else (repo_root / p).resolve()
+                hooks_dir = (common_dir / "hooks").resolve()
+        except (subprocess.CalledProcessError, FileNotFoundError) as e:
+            sys.stderr.write(f"Error al descubrir directorio de hooks: {e}\n")
+            return 1
+
+    if hooks_dir is None:
+        sys.stderr.write("Error: No se pudo determinar el directorio de hooks de git.\n")
+        return 1
+
+    try:
+        hooks_dir.mkdir(parents=True, exist_ok=True)
+    except OSError as e:
+        sys.stderr.write(f"Error al crear directorio de hooks {hooks_dir}: {e}\n")
+        return 1
+
+    target_hook = hooks_dir / "pre-commit"
+    if target_hook.is_symlink():
+        chaining = 'python3 "$(git rev-parse --show-toplevel)/scripts/check_xschem_paths.py" --staged'
+        sys.stderr.write(
+            f"Aviso: Se detectó un enlace simbólico en {target_hook}. No se modificará.\n"
+            f"Para integrar la verificación de rutas, agregue el siguiente comando a su hook:\n"
+            f"  {chaining}\n"
+        )
+        return 1
+
+    if target_hook.exists():
+        if not target_hook.is_file():
+            sys.stderr.write(f"Error: {target_hook} no es un archivo regular.\n")
+            return 1
+        try:
+            src_bytes = src_hook.read_bytes()
+            target_bytes = target_hook.read_bytes()
+        except OSError as e:
+            sys.stderr.write(f"Error al leer archivos de hook: {e}\n")
+            return 1
+
+        if src_bytes == target_bytes:
+            if not os.access(target_hook, os.X_OK):
+                try:
+                    target_hook.chmod(target_hook.stat().st_mode | 0o755)
+                except OSError as e:
+                    sys.stderr.write(f"Error al otorgar permisos de ejecución a {target_hook}: {e}\n")
+                    return 1
+                if not os.access(target_hook, os.X_OK):
+                    sys.stderr.write(f"Error: {target_hook} no es ejecutable.\n")
+                    return 1
+            print(f"Hook pre-commit ya se encuentra instalado y actualizado en {target_hook}.")
+            return 0
+
+        chaining = 'python3 "$(git rev-parse --show-toplevel)/scripts/check_xschem_paths.py" --staged'
+        sys.stderr.write(
+            f"Aviso: Se encontró un hook pre-commit existente y diferente en {target_hook}.\n"
+            "No se sobreescribirá el hook existente.\n"
+            f"Para integrar la verificación de rutas, agregue el siguiente comando a su hook:\n"
+            f"  {chaining}\n"
+        )
+        return 1
+
+    try:
+        src_bytes = src_hook.read_bytes()
+        with open(target_hook, "xb") as f:
+            f.write(src_bytes)
+        target_hook.chmod(target_hook.stat().st_mode | 0o755)
+    except (FileExistsError, OSError) as e:
+        sys.stderr.write(f"Error al escribir hook en {target_hook}: {e}\n")
+        return 1
+
+    print(f"Hook pre-commit instalado exitosamente en {target_hook}.")
+    return 0
 
 
 def cmd_doctor(repo_root: Path) -> int:
@@ -550,6 +713,24 @@ def main(argv: list[str] | None = None) -> int:
     )
     p_netlist.add_argument("--native", action="store_true", default=argparse.SUPPRESS, help="Ejecuta directamente en el host.")
 
+    p_check_paths = subparsers.add_parser(
+        "check-paths",
+        help="Verifica la portabilidad de rutas en esquemáticos y símbolos de Xschem.",
+    )
+    p_check_paths.add_argument(
+        "--staged",
+        action="store_true",
+        default=False,
+        help="Verifica únicamente los archivos en el área de preparación (staged).",
+    )
+    p_check_paths.add_argument("--native", action="store_true", default=argparse.SUPPRESS, help=argparse.SUPPRESS)
+
+    p_install_hooks = subparsers.add_parser(
+        "install-hooks",
+        help="Instala el hook pre-commit de git para verificar rutas.",
+    )
+    p_install_hooks.add_argument("--native", action="store_true", default=argparse.SUPPRESS, help=argparse.SUPPRESS)
+
     args = parser.parse_args(argv)
 
     if not args.command:
@@ -560,6 +741,10 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "setup":
         return cmd_setup(repo_root)
+    elif args.command == "check-paths":
+        return cmd_check_paths(repo_root, staged=args.staged)
+    elif args.command == "install-hooks":
+        return cmd_install_hooks(repo_root)
 
     is_native = is_inside_container_or_native(getattr(args, "native", False))
     if not is_native:

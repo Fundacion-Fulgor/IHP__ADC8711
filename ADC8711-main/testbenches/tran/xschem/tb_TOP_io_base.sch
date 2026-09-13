@@ -586,14 +586,14 @@ tclcommand="xschem raw_read $netlist_dir/power_io.raw tran"
 C {vsource.sym} -120 -870 0 0 {name=V6 value="dc 0 ac 0 pulse(0, 1.2, 5n, 50p, 50p, 10n, 20n)" savecurrent=false}
 C {lab_pin.sym} -120 -940 1 0 {name=p11 sig_type=std_logic lab=in_a}
 C {lab_pin.sym} -490 -460 1 0 {name=p1 sig_type=std_logic lab=in_a}
-C {IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym} -310 -440 2 0 {name=x17}
+C {sg13g2_IOPadAnalog.sym} -310 -440 2 0 {name=x17}
 C {lab_wire.sym} -100 -440 0 1 {name=p24 sig_type=std_logic lab=START
 }
 C {lab_wire.sym} -100 -360 0 1 {name=p25 sig_type=std_logic lab=STOP
 }
 C {GROTDC.sym} 100 -80 0 0 {name=x4
 }
-C {/home/designer/shared//GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym} -310 -360 2 0 {name=x2}
+C {sg13g2_IOPadAnalog.sym} -310 -360 2 0 {name=x2}
 C {sg13g2_pr/bondpad.sym} -570 -440 3 1 {name=X12
 model=bondpad
 spiceprefix=X
@@ -609,7 +609,7 @@ size=80u
 shape=0
 padtype=0
 }
-C {/home/designer/shared//GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym} -310 -280 2 0 {name=x21}
+C {sg13g2_IOPadAnalog.sym} -310 -280 2 0 {name=x21}
 C {sg13g2_pr/bondpad.sym} -570 -280 3 1 {name=X22
 model=bondpad
 spiceprefix=X
@@ -620,7 +620,7 @@ padtype=0
 C {lab_pin.sym} -490 -300 1 0 {name=p13 sig_type=std_logic lab=in_c}
 C {lab_wire.sym} -100 -280 0 1 {name=p15 sig_type=std_logic lab=CTRL[0]
 }
-C {/home/designer/shared//GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym} 730 -220 2 1 {name=x14}
+C {sg13g2_IOPadAnalog.sym} 730 -220 2 1 {name=x14}
 C {lab_pin.sym} 910 -240 3 1 {name=p16 sig_type=std_logic lab=out_a}
 C {sg13g2_pr/bondpad.sym} 990 -220 1 0 {name=X19
 model=bondpad
@@ -629,7 +629,7 @@ size=80u
 shape=0
 padtype=0
 }
-C {/home/designer/shared//GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym} -310 -120 2 0 {name=x23}
+C {sg13g2_IOPadAnalog.sym} -310 -120 2 0 {name=x23}
 C {sg13g2_pr/bondpad.sym} -570 -120 3 1 {name=X24
 model=bondpad
 spiceprefix=X
@@ -638,7 +638,7 @@ shape=0
 padtype=0
 }
 C {lab_pin.sym} -490 -140 1 0 {name=p17 sig_type=std_logic lab=in_e}
-C {/home/designer/shared//GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym} -310 -200 2 0 {name=x25}
+C {sg13g2_IOPadAnalog.sym} -310 -200 2 0 {name=x25}
 C {sg13g2_pr/bondpad.sym} -570 -200 3 1 {name=X26
 model=bondpad
 spiceprefix=X
@@ -647,7 +647,7 @@ shape=0
 padtype=0
 }
 C {lab_pin.sym} -490 -220 1 0 {name=p19 sig_type=std_logic lab=in_d}
-C {/home/designer/shared//GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym} -310 -40 2 0 {name=x27}
+C {sg13g2_IOPadAnalog.sym} -310 -40 2 0 {name=x27}
 C {sg13g2_pr/bondpad.sym} -570 -40 3 1 {name=X28
 model=bondpad
 spiceprefix=X
@@ -696,7 +696,7 @@ C {lab_wire.sym} 60 -200 0 0 {name=p39 sig_type=std_logic lab=CTRL[2:0]
 }
 C {lab_wire.sym} 460 -220 3 1 {name=p27 sig_type=std_logic lab=OUT
 }
-C {/home/designer/shared/GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadVdd.sym} 100 270 1 0 {name=x29}
+C {sg13g2_IOPadVdd.sym} 100 270 1 0 {name=x29}
 C {sg13g2_pr/bondpad.sym} 100 530 2 1 {name=X30
 model=bondpad
 spiceprefix=X
@@ -705,7 +705,7 @@ shape=0
 padtype=0
 }
 C {lab_pin.sym} 70 470 3 1 {name=p40 sig_type=std_logic lab=IO_vdd}
-C {/home/designer/shared/GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadVSS.sym} 180 270 1 0 {name=x31}
+C {sg13g2_IOPadVSS.sym} 180 270 1 0 {name=x31}
 C {lab_pin.sym} 150 470 1 0 {name=p41 sig_type=std_logic lab=IO_vss}
 C {sg13g2_pr/bondpad.sym} 180 530 2 1 {name=X32
 model=bondpad
@@ -714,9 +714,9 @@ size=80u
 shape=0
 padtype=0
 }
-C {/home/designer/shared/GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadIOVdd.sym} 260 270 1 0 {name=x33}
-C {/home/designer/shared/GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadIOVss.sym} 340 270 1 0 {name=x34}
-C {/home/designer/shared//GRO-TDC/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym} -310 40 2 0 {name=x5}
+C {sg13g2_IOPadIOVdd.sym} 260 270 1 0 {name=x33}
+C {sg13g2_IOPadIOVss.sym} 340 270 1 0 {name=x34}
+C {sg13g2_IOPadAnalog.sym} -310 40 2 0 {name=x5}
 C {sg13g2_pr/bondpad.sym} -570 40 3 1 {name=X8
 model=bondpad
 spiceprefix=X

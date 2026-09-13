@@ -116,7 +116,7 @@ wrdata tb_IO_cells_try_1.raw time STOP START
 "
 }
 C {lab_pin.sym} 370 300 1 0 {name=p1 sig_type=std_logic lab=STOP}
-C {IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym} 550 320 2 0 {name=x17}
+C {sg13g2_IOPadAnalog.sym} 550 320 2 0 {name=x17}
 C {lab_wire.sym} 760 320 0 1 {name=p24 sig_type=std_logic lab=START
 }
 C {sg13g2_pr/bondpad.sym} 290 320 3 1 {name=X12
