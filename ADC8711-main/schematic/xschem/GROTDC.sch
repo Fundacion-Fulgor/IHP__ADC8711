@@ -102,13 +102,13 @@ N 800 -190 840 -190 {lab=DRV_STOP}
 N 1120 -190 1160 -190 {lab=DECLK}
 N 1120 -150 1160 -150 {lab=DECLK2}
 N 800 -150 840 -150 {lab=DRV_CTRL[2:0]}
-C {/foss/designs/GRO-TDC/std_cells/Counters_6bits.sym} 540 -590 0 0 {name=x5
+C {Counters_6bits.sym} 540 -590 0 0 {name=x5
 }
-C {/foss/designs/GRO-TDC/std_cells/Counters_regs_6bits.sym} 980 -560 0 0 {name=x6
+C {Counters_regs_6bits.sym} 980 -560 0 0 {name=x6
 }
-C {/foss/designs/GRO-TDC/std_cells/Counter_FA_6bits.sym} 180 -380 0 0 {name=x7
+C {Counter_FA_6bits.sym} 180 -380 0 0 {name=x7
 }
-C {/foss/designs/GRO-TDC/std_cells/Counter_FA_7bits.sym} 380 -300 0 0 {name=x8
+C {Counter_FA_7bits.sym} 380 -300 0 0 {name=x8
 }
 C {lab_wire.sym} 760 -630 0 0 {name=p9 sig_type=std_logic lab=VSS
 }
@@ -170,7 +170,7 @@ C {lab_wire.sym} 1040 -470 3 0 {name=p34 sig_type=std_logic lab=DECLK2
 }
 C {lab_wire.sym} 1060 -430 3 0 {name=p38 sig_type=std_logic lab=RESET
 }
-C {/foss/designs/GRO-TDC/std_cells/Counters__FA_regs_7bits.sym} 1040 -350 0 0 {name=x9
+C {Counters__FA_regs_7bits.sym} 1040 -350 0 0 {name=x9
 }
 C {lab_wire.sym} 1360 -470 0 1 {name=p39 sig_type=std_logic lab=ADDER[7:0]
 }
@@ -188,7 +188,7 @@ C {lab_wire.sym} 900 -1030 0 0 {name=p2 sig_type=std_logic lab=VSS
 }
 C {lab_wire.sym} 1100 -1200 0 0 {name=p1 sig_type=std_logic lab=VDD
 }
-C {/foss/designs/GRO-TDC/std_cells/SR_Latch.sym} 810 -1020 0 0 {name=x1}
+C {SR_Latch.sym} 810 -1020 0 0 {name=x1}
 C {lab_wire.sym} 900 -1190 0 0 {name=p3 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 790 -1130 0 0 {name=p4 sig_type=std_logic lab=DRV_START
@@ -285,7 +285,7 @@ C {lab_wire.sym} 1160 -190 0 1 {name=p82 sig_type=std_logic lab=DECLK
 }
 C {lab_wire.sym} 1160 -150 0 1 {name=p83 sig_type=std_logic lab=DECLK2
 }
-C {/foss/designs/GRO-TDC/std_cells/MUX_8_1_NI.sym} 1480 -520 0 0 {name=x4}
-C {/foss/designs/GRO-TDC/std_cells/delay_cell_long.sym} 1000 -170 0 0 {name=x12}
+C {MUX_8_1_NI.sym} 1480 -520 0 0 {name=x4}
+C {delay_cell_long.sym} 1000 -170 0 0 {name=x12}
 C {lab_wire.sym} 800 -150 3 0 {name=p88 sig_type=std_logic lab=DRV_CTRL[2:0]
 }
