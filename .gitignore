@@ -18,3 +18,7 @@ Thumbs.db
 __pycache__/
 *.py[cod]
 *:Zone.Identifier
+ADC8711-main/layout/klayout/backups
+backups/
+simulations/
+ADC8711-main/schematic/xschem/simulation/
