@@ -76,7 +76,7 @@ N 980 -80 980 -20 {lab=VSS}
 N 930 -20 980 -20 {lab=VSS}
 N 930 -50 930 -20 {lab=VSS}
 N 930 -160 930 -110 {lab=K1}
-C {/foss/designs/GRO-TDC/std_cells/INV3.sym} 430 -200 0 0 {name=x2}
+C {INV3.sym} 430 -200 0 0 {name=x2}
 C {lab_wire.sym} 650 -300 0 0 {name=p10 sig_type=std_logic lab=K0}
 C {lab_wire.sym} 930 -300 0 0 {name=p11 sig_type=std_logic lab=K1}
 C {lab_wire.sym} 1190 -340 0 1 {name=p14 sig_type=std_logic lab=K2}
@@ -85,8 +85,8 @@ C {lab_wire.sym} 780 -280 0 0 {name=p16 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1060 -280 0 0 {name=p17 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 230 -450 0 0 {name=p21 sig_type=std_logic lab=VDD
 }
-C {/foss/designs/GRO-TDC/std_cells/INV3.sym} 690 -200 0 0 {name=x3}
-C {/foss/designs/GRO-TDC/std_cells/INV3.sym} 970 -200 0 0 {name=x4}
+C {INV3.sym} 690 -200 0 0 {name=x3}
+C {INV3.sym} 970 -200 0 0 {name=x4}
 C {sg13g2_pr/sg13_lv_pmos.sym} 210 -370 0 0 {name=M1
 l=0.13u
 w=0.15u
@@ -97,10 +97,10 @@ spiceprefix=X
 }
 C {lab_wire.sym} 150 -370 0 0 {name=p34 sig_type=std_logic lab=G
 }
-C {/foss/designs/GRO-TDC/std_cells/INV_D1.sym} 420 -460 0 0 {name=x5[1:0]}
-C {/foss/designs/GRO-TDC/std_cells/INV_D1.sym} 590 -460 0 0 {name=x6[3:0]}
-C {/foss/designs/GRO-TDC/std_cells/INV_D1.sym} 750 -460 0 0 {name=x7[7:0]}
-C {/foss/designs/GRO-TDC/std_cells/INV_D1.sym} 900 -460 0 0 {name=x8[15:0]}
+C {INV_D1.sym} 420 -460 0 0 {name=x5[1:0]}
+C {INV_D1.sym} 590 -460 0 0 {name=x6[3:0]}
+C {INV_D1.sym} 750 -460 0 0 {name=x7[7:0]}
+C {INV_D1.sym} 900 -460 0 0 {name=x8[15:0]}
 C {lab_wire.sym} 510 -540 0 0 {name=p23 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 680 -540 0 0 {name=p24 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 840 -540 0 0 {name=p25 sig_type=std_logic lab=VSS}
