@@ -1,4 +1,4 @@
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/SR_Latch.sch
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/SR_Latch.sch
 .subckt SR_Latch VDD VS QN QP VR VSS
 *.PININFO VDD:B VSS:B VS:I VR:I QP:O QN:O
 x1 VDD QN VS QP VSS NOR
@@ -6,8 +6,8 @@ x2 VDD QP QN VR VSS NOR
 .ends
 
 * expanding   symbol:  NOR.sym # of pins=5
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/NOR.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/NOR.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NOR.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NOR.sch
 .subckt NOR VDD VOUT VA VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 MM1 VOUT VA VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1

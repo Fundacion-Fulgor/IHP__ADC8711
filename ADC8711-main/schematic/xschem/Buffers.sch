@@ -28,9 +28,9 @@ C {ipin.sym} 170 -970 0 0 {name=p25 lab=IN}
 C {iopin.sym} 650 -970 0 1 {name=p31 lab=VDD}
 C {iopin.sym} 650 -930 0 1 {name=p32 lab=VSS}
 C {opin.sym} 440 -970 0 1 {name=p37 lab=OUT}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 50 -910 1 0 {name=x1[1:0]}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D2.sym} 50 -730 1 0 {name=x2[1:0]}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV05.sym} 270 -550 1 1 {name=x3}
+C {INV_D1.sym} 50 -910 1 0 {name=x1[1:0]}
+C {INV_D2.sym} 50 -730 1 0 {name=x2[1:0]}
+C {INV05.sym} 270 -550 1 1 {name=x3}
 C {lab_wire.sym} 130 -820 0 0 {name=p1 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 130 -640 0 0 {name=p2 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 250 -820 0 1 {name=p3 sig_type=std_logic lab=VDD}

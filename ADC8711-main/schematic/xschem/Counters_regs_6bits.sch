@@ -159,7 +159,7 @@ N 1570 430 1590 430 {lab=VSS}
 N 1720 500 1720 520 {lab=D2_B[5]}
 N 1790 430 1790 470 {lab=VDD}
 N 1570 430 1570 470 {lab=VSS}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 70 -360 1 0 {name=x8}
+C {FF_D.sym} 70 -360 1 0 {name=x8}
 C {iopin.sym} 320 -510 0 1 {name=p1 lab=VDD}
 C {iopin.sym} 320 -470 0 1 {name=p2 lab=VSS}
 C {ipin.sym} 180 -510 0 0 {name=p12 lab=RESET}
@@ -176,119 +176,119 @@ C {lab_wire.sym} 220 -280 0 1 {name=p30 sig_type=std_logic lab=C0_B[0]}
 C {lab_wire.sym} 220 -100 3 0 {name=p32 sig_type=std_logic lab=D0_B[0]}
 C {lab_wire.sym} 70 -150 3 0 {name=p33 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 290 -150 1 1 {name=p34 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 370 -360 1 0 {name=x1}
+C {FF_D.sym} 370 -360 1 0 {name=x1}
 C {lab_wire.sym} 440 -280 0 0 {name=p3 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 480 -280 0 0 {name=p4 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 520 -280 0 1 {name=p5 sig_type=std_logic lab=C0_B[1]}
 C {lab_wire.sym} 520 -100 3 0 {name=p6 sig_type=std_logic lab=D0_B[1]}
 C {lab_wire.sym} 370 -150 3 0 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 590 -150 1 1 {name=p8 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 670 -360 1 0 {name=x2}
+C {FF_D.sym} 670 -360 1 0 {name=x2}
 C {lab_wire.sym} 740 -280 0 0 {name=p13 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 780 -280 0 0 {name=p14 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 820 -280 0 1 {name=p15 sig_type=std_logic lab=C0_B[2]}
 C {lab_wire.sym} 820 -100 3 0 {name=p16 sig_type=std_logic lab=D0_B[2]}
 C {lab_wire.sym} 670 -150 3 0 {name=p17 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 890 -150 1 1 {name=p18 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 970 -360 1 0 {name=x3}
+C {FF_D.sym} 970 -360 1 0 {name=x3}
 C {lab_wire.sym} 1040 -280 0 0 {name=p20 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 1080 -280 0 0 {name=p21 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1120 -280 0 1 {name=p22 sig_type=std_logic lab=C0_B[3]}
 C {lab_wire.sym} 1120 -100 3 0 {name=p23 sig_type=std_logic lab=D0_B[3]}
 C {lab_wire.sym} 970 -150 3 0 {name=p24 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1190 -150 1 1 {name=p26 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 1270 -360 1 0 {name=x4}
+C {FF_D.sym} 1270 -360 1 0 {name=x4}
 C {lab_wire.sym} 1340 -280 0 0 {name=p35 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 1380 -280 0 0 {name=p36 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1420 -280 0 1 {name=p37 sig_type=std_logic lab=C0_B[4]}
 C {lab_wire.sym} 1420 -100 3 0 {name=p38 sig_type=std_logic lab=D0_B[4]}
 C {lab_wire.sym} 1270 -150 3 0 {name=p39 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1490 -150 1 1 {name=p40 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 1570 -360 1 0 {name=x5}
+C {FF_D.sym} 1570 -360 1 0 {name=x5}
 C {lab_wire.sym} 1640 -280 0 0 {name=p41 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 1680 -280 0 0 {name=p42 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1720 -280 0 1 {name=p43 sig_type=std_logic lab=C0_B[5]}
 C {lab_wire.sym} 1720 -100 3 0 {name=p44 sig_type=std_logic lab=D0_B[5]}
 C {lab_wire.sym} 1570 -150 3 0 {name=p45 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1790 -150 1 1 {name=p46 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 70 -60 1 0 {name=x6}
+C {FF_D.sym} 70 -60 1 0 {name=x6}
 C {lab_wire.sym} 140 20 0 0 {name=p47 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 180 20 0 0 {name=p48 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 220 20 0 1 {name=p49 sig_type=std_logic lab=C1_B[0]}
 C {lab_wire.sym} 220 200 3 0 {name=p50 sig_type=std_logic lab=D1_B[0]}
 C {lab_wire.sym} 70 150 3 0 {name=p51 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 290 150 1 1 {name=p52 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 370 -60 1 0 {name=x7}
+C {FF_D.sym} 370 -60 1 0 {name=x7}
 C {lab_wire.sym} 440 20 0 0 {name=p53 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 480 20 0 0 {name=p54 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 520 20 0 1 {name=p55 sig_type=std_logic lab=C1_B[1]}
 C {lab_wire.sym} 520 200 3 0 {name=p56 sig_type=std_logic lab=D1_B[1]}
 C {lab_wire.sym} 370 150 3 0 {name=p57 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 590 150 1 1 {name=p58 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 670 -60 1 0 {name=x9}
+C {FF_D.sym} 670 -60 1 0 {name=x9}
 C {lab_wire.sym} 740 20 0 0 {name=p59 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 780 20 0 0 {name=p60 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 820 20 0 1 {name=p61 sig_type=std_logic lab=C1_B[2]}
 C {lab_wire.sym} 820 200 3 0 {name=p62 sig_type=std_logic lab=D1_B[2]}
 C {lab_wire.sym} 670 150 3 0 {name=p63 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 890 150 1 1 {name=p64 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 970 -60 1 0 {name=x10}
+C {FF_D.sym} 970 -60 1 0 {name=x10}
 C {lab_wire.sym} 1040 20 0 0 {name=p65 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 1080 20 0 0 {name=p66 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1120 20 0 1 {name=p67 sig_type=std_logic lab=C1_B[3]}
 C {lab_wire.sym} 1120 200 3 0 {name=p68 sig_type=std_logic lab=D1_B[3]}
 C {lab_wire.sym} 970 150 3 0 {name=p69 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1190 150 1 1 {name=p70 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 1270 -60 1 0 {name=x11}
+C {FF_D.sym} 1270 -60 1 0 {name=x11}
 C {lab_wire.sym} 1340 20 0 0 {name=p71 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 1380 20 0 0 {name=p72 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1420 20 0 1 {name=p73 sig_type=std_logic lab=C1_B[4]}
 C {lab_wire.sym} 1420 200 3 0 {name=p74 sig_type=std_logic lab=D1_B[4]}
 C {lab_wire.sym} 1270 150 3 0 {name=p75 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1490 150 1 1 {name=p76 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 1570 -60 1 0 {name=x12}
+C {FF_D.sym} 1570 -60 1 0 {name=x12}
 C {lab_wire.sym} 1640 20 0 0 {name=p77 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 1680 20 0 0 {name=p78 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1720 20 0 1 {name=p79 sig_type=std_logic lab=C1_B[5]}
 C {lab_wire.sym} 1720 200 3 0 {name=p80 sig_type=std_logic lab=D1_B[5]}
 C {lab_wire.sym} 1570 150 3 0 {name=p81 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1790 150 1 1 {name=p82 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 70 260 1 0 {name=x13}
+C {FF_D.sym} 70 260 1 0 {name=x13}
 C {lab_wire.sym} 140 340 0 0 {name=p83 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 180 340 0 0 {name=p84 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 220 340 0 1 {name=p85 sig_type=std_logic lab=C2_B[0]}
 C {lab_wire.sym} 220 520 3 0 {name=p86 sig_type=std_logic lab=D2_B[0]}
 C {lab_wire.sym} 70 470 3 0 {name=p87 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 290 470 1 1 {name=p88 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 370 260 1 0 {name=x14}
+C {FF_D.sym} 370 260 1 0 {name=x14}
 C {lab_wire.sym} 440 340 0 0 {name=p89 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 480 340 0 0 {name=p90 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 520 340 0 1 {name=p91 sig_type=std_logic lab=C2_B[1]}
 C {lab_wire.sym} 520 520 3 0 {name=p92 sig_type=std_logic lab=D2_B[1]}
 C {lab_wire.sym} 370 470 3 0 {name=p93 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 590 470 1 1 {name=p94 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 670 260 1 0 {name=x15}
+C {FF_D.sym} 670 260 1 0 {name=x15}
 C {lab_wire.sym} 740 340 0 0 {name=p95 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 780 340 0 0 {name=p96 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 820 340 0 1 {name=p97 sig_type=std_logic lab=C2_B[2]}
 C {lab_wire.sym} 820 520 3 0 {name=p98 sig_type=std_logic lab=D2_B[2]}
 C {lab_wire.sym} 670 470 3 0 {name=p99 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 890 470 1 1 {name=p100 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 970 260 1 0 {name=x16}
+C {FF_D.sym} 970 260 1 0 {name=x16}
 C {lab_wire.sym} 1040 340 0 0 {name=p101 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 1080 340 0 0 {name=p102 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1120 340 0 1 {name=p103 sig_type=std_logic lab=C2_B[3]}
 C {lab_wire.sym} 1120 520 3 0 {name=p104 sig_type=std_logic lab=D2_B[3]}
 C {lab_wire.sym} 970 470 3 0 {name=p105 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1190 470 1 1 {name=p106 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 1270 260 1 0 {name=x17}
+C {FF_D.sym} 1270 260 1 0 {name=x17}
 C {lab_wire.sym} 1340 340 0 0 {name=p107 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 1380 340 0 0 {name=p108 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1420 340 0 1 {name=p109 sig_type=std_logic lab=C2_B[4]}
 C {lab_wire.sym} 1420 520 3 0 {name=p110 sig_type=std_logic lab=D2_B[4]}
 C {lab_wire.sym} 1270 470 3 0 {name=p111 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1490 470 1 1 {name=p112 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 1570 260 1 0 {name=x18}
+C {FF_D.sym} 1570 260 1 0 {name=x18}
 C {lab_wire.sym} 1640 340 0 0 {name=p113 sig_type=std_logic lab=RESET}
 C {lab_wire.sym} 1680 340 0 0 {name=p114 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1720 340 0 1 {name=p115 sig_type=std_logic lab=C2_B[5]}

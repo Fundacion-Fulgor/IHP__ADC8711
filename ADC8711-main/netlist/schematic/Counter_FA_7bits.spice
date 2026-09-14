@@ -1,4 +1,4 @@
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/Counter_FA_7bits.sch
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counter_FA_7bits.sch
 .subckt Counter_FA_7bits S[6] S[5] S[4] S[3] S[2] S[1] S[0] A[6] A[5] A[4] A[3] A[2] A[1] A[0] VDD COUT B[6] B[5] B[4] B[3] B[2]
 + B[1] B[0] VSS CIN
 *.PININFO VDD:B VSS:B A[6:0]:I B[6:0]:I CIN:I S[6:0]:O COUT:O
@@ -12,8 +12,8 @@ x7 A[6] VDD B[6] S[6] VSS net6 COUT FA
 .ends
 
 * expanding   symbol:  FA.sym # of pins=7
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/FA.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/FA.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/FA.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/FA.sch
 .subckt FA A VDD B S VSS CIN CSAL
 *.PININFO B:I A:I CIN:I S:O CSAL:O VDD:B VSS:B
 x1 net2 B VDD CIN VSS XOR
@@ -27,8 +27,8 @@ x4 VDD CIN net5 A VSS AND
 
 
 * expanding   symbol:  XOR.sym # of pins=5
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/XOR.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/XOR.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/XOR.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/XOR.sch
 .subckt XOR OUT A VDD B VSS
 *.PININFO VDD:B VSS:B A:I B:I OUT:O
 x2 VDD net3 net2 B VSS AND
@@ -40,8 +40,8 @@ x3 VDD A net4 net1 VSS AND
 
 
 * expanding   symbol:  OR.sym # of pins=5
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/OR.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/OR.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/OR.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/OR.sch
 .subckt OR VDD VOUT VA VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 x2 VDD VOUT net1 VSS INV_D1
@@ -50,8 +50,8 @@ x1 VDD net1 VA VB VSS NOR
 
 
 * expanding   symbol:  AND.sym # of pins=5
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/AND.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/AND.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/AND.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/AND.sch
 .subckt AND VDD VA VOUT VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 x1 VDD VA net1 VB VSS NAND
@@ -60,8 +60,8 @@ x2 VDD VOUT net1 VSS INV_D1
 
 
 * expanding   symbol:  INV_D1.sym # of pins=4
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV_D1.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV_D1.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sch
 .subckt INV_D1 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
@@ -70,8 +70,8 @@ MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
 
 
 * expanding   symbol:  NOR.sym # of pins=5
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/NOR.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/NOR.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NOR.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NOR.sch
 .subckt NOR VDD VOUT VA VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 MM1 VOUT VA VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
@@ -82,8 +82,8 @@ MM4 net1 VA VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1
 
 
 * expanding   symbol:  NAND.sym # of pins=5
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/NAND.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/NAND.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NAND.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NAND.sch
 .subckt NAND VDD VA VOUT VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 MM1 net1 VB VSS VSS sg13_lv_nmos w=0.45u l=0.13u ng=1

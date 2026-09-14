@@ -65,9 +65,9 @@ N 950 -260 1010 -260 {lab=C2_B[3]}
 N 910 -280 990 -280 {lab=C2_B[2]}
 N 870 -300 970 -300 {lab=C2_B[1]}
 N 830 -320 950 -320 {lab=C2_B[0]}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/6bits_counter.sym} 740 -510 3 1 {name=x5}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/6bits_counter.sym} 390 -510 3 1 {name=x6}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/6bits_counter.sym} 1100 -510 3 1 {name=x7}
+C {6bits_counter.sym} 740 -510 3 1 {name=x5}
+C {6bits_counter.sym} 390 -510 3 1 {name=x6}
+C {6bits_counter.sym} 1100 -510 3 1 {name=x7}
 C {iopin.sym} 550 -680 0 1 {name=p1 lab=VDD}
 C {iopin.sym} 550 -640 0 1 {name=p2 lab=VSS}
 C {lab_wire.sym} 180 -400 0 0 {name=p3 sig_type=std_logic lab=VDD}

@@ -1,4 +1,4 @@
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/Buffers_IO.sch
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Buffers_IO.sch
 .subckt Buffers_IO DRV_START VDD START VSS DRV_STOP STOP DRV_RESET RESET DRV_ADDER ADDER DRV_CTRL[2] DRV_CTRL[1] DRV_CTRL[0]
 + CTRL[2] CTRL[1] CTRL[0]
 *.PININFO DRV_START:I VDD:B VSS:B DRV_STOP:I DRV_RESET:I ADDER:I START:O STOP:O RESET:O DRV_ADDER:O CTRL[2:0]:I DRV_CTRL[2:0]:O
@@ -12,8 +12,8 @@ x7 VDD CTRL[0] VSS DRV_CTRL[0] Buffers
 .ends
 
 * expanding   symbol:  Buffers.sym # of pins=4
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/Buffers.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/Buffers.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Buffers.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Buffers.sch
 .subckt Buffers VDD IN VSS OUT
 *.PININFO IN:I VDD:B VSS:B OUT:O
 x1[1] VDD net1 IN VSS INV_D1
@@ -25,8 +25,8 @@ x3 VDD net1 OUT VSS INV05
 
 
 * expanding   symbol:  INV_D1.sym # of pins=4
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV_D1.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV_D1.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sch
 .subckt INV_D1 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
@@ -35,8 +35,8 @@ MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
 
 
 * expanding   symbol:  INV_D2.sym # of pins=4
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV_D2.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV_D2.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D2.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D2.sch
 .subckt INV_D2 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.3u l=0.13u ng=1
@@ -45,8 +45,8 @@ MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
 
 
 * expanding   symbol:  INV05.sym # of pins=4
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV05.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV05.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV05.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV05.sch
 .subckt INV05 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM1 net1 VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1

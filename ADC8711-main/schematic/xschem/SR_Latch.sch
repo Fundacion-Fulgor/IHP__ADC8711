@@ -31,5 +31,5 @@ C {opin.sym} 340 -110 0 0 {name=p5 lab=QP}
 C {opin.sym} 340 -290 0 0 {name=p6 lab=QN}
 C {lab_wire.sym} 210 -220 0 1 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 210 -180 0 1 {name=p8 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/NOR.sym} 130 -170 0 0 {name=x1}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/NOR.sym} 130 10 0 0 {name=x2}
+C {NOR.sym} 130 -170 0 0 {name=x1}
+C {NOR.sym} 130 10 0 0 {name=x2}

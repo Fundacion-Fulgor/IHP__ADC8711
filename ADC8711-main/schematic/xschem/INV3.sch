@@ -21,12 +21,12 @@ C {iopin.sym} 170 -350 0 0 {name=p1 lab=VDD}
 C {iopin.sym} 170 -320 0 0 {name=p2 lab=VSS}
 C {opin.sym} 780 -140 1 0 {name=p3 lab=VOUT}
 C {ipin.sym} 50 -140 0 0 {name=p4 lab=VIN}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 50 0 0 0 {name=x2}
+C {INV_D1.sym} 50 0 0 0 {name=x2}
 C {lab_wire.sym} 140 -80 0 0 {name=p15 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 400 -80 0 0 {name=p16 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 680 -80 0 0 {name=p17 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 140 -200 0 0 {name=p5 lab=VDD}
 C {lab_wire.sym} 400 -200 0 0 {name=p6 lab=VDD}
 C {lab_wire.sym} 680 -200 0 0 {name=p7 lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 310 0 0 0 {name=x1[1:0]}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 590 0 0 0 {name=x3[3:0]}
+C {INV_D1.sym} 310 0 0 0 {name=x1[1:0]}
+C {INV_D1.sym} 590 0 0 0 {name=x3[3:0]}

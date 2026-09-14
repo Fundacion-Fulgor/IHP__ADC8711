@@ -1,4 +1,4 @@
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/Delay_cell.sch
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Delay_cell.sch
 .subckt Delay_cell VDD IN OUT1 OUT2 VSS
 *.PININFO IN:I VDD:B VSS:B OUT1:O OUT2:O
 x5[1] VDD net1 IN VSS INV_D1
@@ -34,8 +34,8 @@ x8[0] VDD OUT2 net2 VSS INV_D1
 .ends
 
 * expanding   symbol:  INV_D1.sym # of pins=4
-** sym_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV_D1.sym
-** sch_path: /home/ivan_torres/UNICASS/GRO-TDC/design/schematic/INV_D1.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sch
 .subckt INV_D1 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1

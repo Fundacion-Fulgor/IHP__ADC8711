@@ -51,10 +51,10 @@ N 330 -230 330 -210 {lab=VDD}
 N 330 -90 330 -70 {lab=VSS}
 N 390 -330 460 -330 {lab=#net3}
 N 390 -150 650 -150 {lab=#net5}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/XOR.sym} 240 -610 0 0 {name=x1}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/XOR.sym} 440 -630 0 0 {name=x5}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/OR.sym} 460 -370 0 0 {name=x6}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/OR.sym} 630 -50 0 0 {name=x7}
+C {XOR.sym} 240 -610 0 0 {name=x1}
+C {XOR.sym} 440 -630 0 0 {name=x5}
+C {OR.sym} 460 -370 0 0 {name=x6}
+C {OR.sym} 630 -50 0 0 {name=x7}
 C {ipin.sym} 80 -710 0 0 {name=p1 lab=B}
 C {ipin.sym} 80 -790 0 0 {name=p2 lab=A}
 C {ipin.sym} 80 -630 0 0 {name=p3 lab=CIN}
@@ -70,10 +70,10 @@ C {lab_wire.sym} 330 -590 0 1 {name=p12 lab=VDD}
 C {lab_wire.sym} 330 -430 0 1 {name=p13 lab=VSS}
 C {lab_wire.sym} 540 -560 0 1 {name=p14 lab=VDD}
 C {lab_wire.sym} 540 -420 0 1 {name=p15 lab=VSS}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/AND.sym} 270 -430 0 0 {name=x2}
+C {AND.sym} 270 -430 0 0 {name=x2}
 C {lab_wire.sym} 330 -410 0 1 {name=p16 lab=VDD}
 C {lab_wire.sym} 330 -250 0 1 {name=p17 lab=VSS}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/AND.sym} 270 -250 0 0 {name=x3}
+C {AND.sym} 270 -250 0 0 {name=x3}
 C {lab_wire.sym} 330 -230 0 1 {name=p18 lab=VDD}
 C {lab_wire.sym} 330 -70 0 1 {name=p19 lab=VSS}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/AND.sym} 270 -70 0 0 {name=x4}
+C {AND.sym} 270 -70 0 0 {name=x4}

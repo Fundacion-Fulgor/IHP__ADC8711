@@ -70,13 +70,13 @@ C {lab_wire.sym} 550 20 2 0 {name=p21 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 550 -840 0 1 {name=p22 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 550 -660 2 0 {name=p23 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 550 -170 2 0 {name=p24 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 140 -510 0 0 {name=x3}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 140 -290 0 0 {name=x4}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 140 70 0 0 {name=x5}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/TG_2C.sym} 410 -910 2 1 {name=x6}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/TG_2C.sym} 410 -710 2 1 {name=x7}
+C {INV_D1.sym} 140 -510 0 0 {name=x3}
+C {INV_D1.sym} 140 -290 0 0 {name=x4}
+C {INV_D1.sym} 140 70 0 0 {name=x5}
+C {TG_2C.sym} 410 -910 2 1 {name=x6}
+C {TG_2C.sym} 410 -710 2 1 {name=x7}
 C {lab_wire.sym} 510 -630 0 0 {name=p10 sig_type=std_logic lab=VSS}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/TG_2C.sym} 410 -460 2 1 {name=x1}
+C {TG_2C.sym} 410 -460 2 1 {name=x1}
 C {lab_wire.sym} 510 -220 2 1 {name=p11 sig_type=std_logic lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/TG_2C.sym} 410 -230 2 1 {name=x2}
+C {TG_2C.sym} 410 -230 2 1 {name=x2}
 C {lab_wire.sym} 510 20 2 1 {name=p19 sig_type=std_logic lab=VDD}
