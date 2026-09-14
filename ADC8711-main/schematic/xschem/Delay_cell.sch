@@ -24,11 +24,11 @@ N -380 -150 -340 -150 {lab=VDD}
 N -490 -150 -450 -150 {lab=IN}
 N -250 -150 -210 -150 {lab=OUT1}
 N -380 -120 -340 -120 {lab=VSS}
-N -250 -120 -210 -120 {lab=#net3}
-C {INV_D1.sym} -580 150 0 0 {name=x5[1:0]}
-C {INV_D1.sym} -410 150 0 0 {name=x6[3:0]}
-C {INV_D1.sym} -220 150 0 0 {name=x7[7:0]}
-C {INV_D1.sym} -70 150 0 0 {name=x8[15:0]}
+N -250 -120 -210 -120 {lab=OUT2}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} -580 150 0 0 {name=x5[1:0]}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} -410 150 0 0 {name=x6[3:0]}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} -220 150 0 0 {name=x7[7:0]}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} -70 150 0 0 {name=x8[15:0]}
 C {lab_wire.sym} -490 70 0 0 {name=p23 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} -320 70 0 0 {name=p24 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} -130 70 0 0 {name=p25 sig_type=std_logic lab=VSS}

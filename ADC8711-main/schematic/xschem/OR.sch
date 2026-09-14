@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -18,7 +18,7 @@ C {iopin.sym} 160 -190 0 0 {name=p2 lab=VSS}
 C {ipin.sym} 60 -300 0 0 {name=p3 lab=VA}
 C {ipin.sym} 60 -260 0 0 {name=p4 lab=VB}
 C {opin.sym} 430 -280 0 0 {name=p5 lab=VOUT}
-C {INV_D1.sym} 230 -140 0 0 {name=x2}
-C {NOR.sym} 80 -160 0 0 {name=x1}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 230 -140 0 0 {name=x2}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/NOR.sym} 80 -160 0 0 {name=x1}
 C {lab_wire.sym} 320 -360 0 0 {name=p6 lab=VDD}
 C {lab_wire.sym} 320 -200 0 0 {name=p7 lab=VSS}

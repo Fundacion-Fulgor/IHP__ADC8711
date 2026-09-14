@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -33,14 +33,14 @@ N 520 -360 520 -270 {lab=#net2}
 N 520 -270 540 -270 {lab=#net2}
 N 520 -230 540 -230 {lab=#net4}
 N 520 -230 520 -140 {lab=#net4}
-C {AND.sym} 340 -280 0 0 {name=x2}
-C {INV_D1.sym} 20 -240 0 0 {name=x4}
-C {INV_D1.sym} 20 20 0 0 {name=x5}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/AND.sym} 340 -280 0 0 {name=x2}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 20 -240 0 0 {name=x4}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 20 20 0 0 {name=x5}
 C {iopin.sym} 200 -580 0 1 {name=p1 lab=VDD}
 C {iopin.sym} 200 -540 0 1 {name=p2 lab=VSS}
 C {ipin.sym} 70 -580 0 0 {name=p3 lab=A}
 C {ipin.sym} 70 -540 0 0 {name=p4 lab=B}
-C {OR.sym} 520 -130 0 0 {name=x1}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/OR.sym} 520 -130 0 0 {name=x1}
 C {lab_wire.sym} 40 -380 0 0 {name=p7 lab=A}
 C {lab_wire.sym} 40 -120 0 0 {name=p8 lab=B}
 C {lab_wire.sym} 400 -440 0 1 {name=p9 lab=VDD}
@@ -53,7 +53,7 @@ C {lab_wire.sym} 110 -180 0 1 {name=p15 lab=VDD}
 C {lab_wire.sym} 110 -60 2 1 {name=p16 lab=VSS}
 C {opin.sym} 310 -580 0 1 {name=p19 lab=OUT}
 C {lab_wire.sym} 710 -250 0 1 {name=p20 lab=OUT}
-C {AND.sym} 340 -60 0 0 {name=x3}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/AND.sym} 340 -60 0 0 {name=x3}
 C {lab_wire.sym} 400 -220 0 1 {name=p5 lab=VDD}
 C {lab_wire.sym} 400 -60 2 1 {name=p6 lab=VSS}
 C {lab_wire.sym} 330 -160 0 0 {name=p18 lab=A}

@@ -15,3 +15,7 @@ Thumbs.db
 # Cache de Python
 __pycache__/
 *.py[cod]
+
+*:Zone.Identifier
+lvs_run*
+backups/

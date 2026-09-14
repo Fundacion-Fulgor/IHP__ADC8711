@@ -44,7 +44,7 @@ N 1040 90 1100 90 {lab=VDD}
 N 1280 90 1330 90 {lab=VSS}
 N 1530 90 1590 90 {lab=VDD}
 N 1770 90 1820 90 {lab=VSS}
-N 440 -770 480 -770 {lab=DRV_ADDER}
+N 440 -770 480 -770 {lab=DRV_CTRL[2:0]}
 C {ipin.sym} 170 -970 0 0 {name=p25 lab=DRV_START}
 C {iopin.sym} 650 -970 0 1 {name=p31 lab=VDD}
 C {iopin.sym} 650 -930 0 1 {name=p32 lab=VSS}
@@ -64,22 +64,22 @@ C {lab_pin.sym} 130 -60 0 1 {name=p107 sig_type=std_logic lab=ADDER
 }
 C {lab_pin.sym} 130 260 0 1 {name=p97 sig_type=std_logic lab=DRV_ADDER
 }
-C {Buffers.sym} 330 -580 3 1 {name=x1}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/Buffers.sym} 330 -580 3 1 {name=x1}
 C {lab_wire.sym} 0 -360 0 0 {name=p1 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 290 -360 0 1 {name=p2 sig_type=std_logic lab=VSS
 }
-C {Buffers.sym} 850 -590 3 1 {name=x2}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/Buffers.sym} 850 -590 3 1 {name=x2}
 C {lab_wire.sym} 520 -370 0 0 {name=p3 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 810 -370 0 1 {name=p4 sig_type=std_logic lab=VSS
 }
-C {Buffers.sym} 1340 -590 3 1 {name=x3}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/Buffers.sym} 1340 -590 3 1 {name=x3}
 C {lab_wire.sym} 1010 -370 0 0 {name=p5 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 1300 -370 0 1 {name=p6 sig_type=std_logic lab=VSS
 }
-C {Buffers.sym} 310 -120 3 1 {name=x6}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/Buffers.sym} 310 -120 3 1 {name=x6}
 C {lab_wire.sym} -20 100 0 0 {name=p11 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 270 100 0 1 {name=p12 sig_type=std_logic lab=VSS
@@ -104,17 +104,17 @@ C {lab_wire.sym} 1680 250 0 0 {name=p14 sig_type=std_logic lab=DRV_CTRL[0]
 }
 C {lab_pin.sym} 1680 -70 0 1 {name=p15 sig_type=std_logic lab=CTRL[0]
 }
-C {Buffers.sym} 850 -120 3 1 {name=x4}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/Buffers.sym} 850 -120 3 1 {name=x4}
 C {lab_wire.sym} 520 100 0 0 {name=p16 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 810 100 0 1 {name=p17 sig_type=std_logic lab=VSS
 }
-C {Buffers.sym} 1370 -130 3 1 {name=x5}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/Buffers.sym} 1370 -130 3 1 {name=x5}
 C {lab_wire.sym} 1040 90 0 0 {name=p18 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 1330 90 0 1 {name=p19 sig_type=std_logic lab=VSS
 }
-C {Buffers.sym} 1860 -130 3 1 {name=x7}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/Buffers.sym} 1860 -130 3 1 {name=x7}
 C {lab_wire.sym} 1530 90 0 0 {name=p20 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 1820 90 0 1 {name=p21 sig_type=std_logic lab=VSS

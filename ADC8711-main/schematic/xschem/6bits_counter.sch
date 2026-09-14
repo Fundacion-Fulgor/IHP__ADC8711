@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -75,39 +75,39 @@ N 2170 -310 2170 -70 {lab=B5}
 N 2170 -370 2170 -310 {lab=B5}
 N 2120 -70 2170 -70 {lab=B5}
 N 1960 -310 2170 -310 {lab=B5}
-C {FF_D.sym} 30 -50 0 0 {name=x1}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 30 -50 0 0 {name=x1}
 C {lab_wire.sym} 200 -40 0 0 {name=p2 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 90 -160 0 0 {name=p10 sig_type=std_logic lab=CLK
 }
 C {lab_wire.sym} 90 -120 0 0 {name=p11 sig_type=std_logic lab=RESET
 }
 C {lab_wire.sym} 200 -290 0 0 {name=p14 sig_type=std_logic lab=VDD}
-C {FF_D.sym} 400 -40 0 0 {name=x2}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 400 -40 0 0 {name=x2}
 C {lab_wire.sym} 570 -30 0 0 {name=p15 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 460 -110 0 0 {name=p18 sig_type=std_logic lab=RESET
 }
 C {lab_wire.sym} 570 -280 0 0 {name=p19 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 690 -410 0 0 {name=p20 sig_type=std_logic lab=B1}
 C {lab_wire.sym} 320 -400 0 0 {name=p1 sig_type=std_logic lab=B0}
-C {FF_D.sym} 770 -30 0 0 {name=x3}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 770 -30 0 0 {name=x3}
 C {lab_wire.sym} 940 -20 0 0 {name=p3 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 830 -100 0 0 {name=p4 sig_type=std_logic lab=RESET
 }
 C {lab_wire.sym} 940 -270 0 0 {name=p5 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1060 -400 0 0 {name=p6 sig_type=std_logic lab=B2}
-C {FF_D.sym} 1140 -20 0 0 {name=x4}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 1140 -20 0 0 {name=x4}
 C {lab_wire.sym} 1310 -10 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1200 -90 0 0 {name=p8 sig_type=std_logic lab=RESET
 }
 C {lab_wire.sym} 1310 -260 0 0 {name=p9 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1430 -390 0 0 {name=p12 sig_type=std_logic lab=B3}
-C {FF_D.sym} 1510 -10 0 0 {name=x5}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 1510 -10 0 0 {name=x5}
 C {lab_wire.sym} 1680 0 0 0 {name=p13 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1570 -80 0 0 {name=p16 sig_type=std_logic lab=RESET
 }
 C {lab_wire.sym} 1680 -250 0 0 {name=p17 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1800 -380 0 0 {name=p21 sig_type=std_logic lab=B4}
-C {FF_D.sym} 1880 0 0 0 {name=x6}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/FF_D.sym} 1880 0 0 0 {name=x6}
 C {lab_wire.sym} 2050 10 0 0 {name=p22 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1940 -70 0 0 {name=p23 sig_type=std_logic lab=RESET
 }

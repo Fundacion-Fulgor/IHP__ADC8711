@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -72,17 +72,17 @@ N 1740 -340 1780 -340 {lab=VQN}
 N 1670 -300 1670 -260 {lab=VSS}
 N 1670 -440 1670 -380 {lab=VDD}
 N 1500 -340 1620 -340 {lab=VQ}
-C {INV_D1.sym} 60 40 0 0 {name=x1}
-C {INV_D1.sym} 60 -240 0 0 {name=x2}
-C {TG_2C.sym} 220 -220 0 0 {name=x3}
-C {TG_2C.sym} 220 60 0 0 {name=x4}
-C {TG_2C.sym} 1000 60 0 0 {name=x5}
-C {INV_D1.sym} 840 -220 0 0 {name=x6}
-C {TG_2C.sym} 1000 -200 0 0 {name=x7}
-C {NAND_D2.sym} 560 -270 0 0 {name=x8}
-C {NAND_D3.sym} 1320 -250 0 0 {name=x9}
-C {INV_D1.sym} 60 -520 0 0 {name=x10}
-C {INV_D3.sym} 840 40 0 0 {name=x11}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 60 40 0 0 {name=x1}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 60 -240 0 0 {name=x2}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/TG_2C.sym} 220 -220 0 0 {name=x3}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/TG_2C.sym} 220 60 0 0 {name=x4}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/TG_2C.sym} 1000 60 0 0 {name=x5}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 840 -220 0 0 {name=x6}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/TG_2C.sym} 1000 -200 0 0 {name=x7}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/NAND_D2.sym} 560 -270 0 0 {name=x8}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/NAND_D3.sym} 1320 -250 0 0 {name=x9}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 60 -520 0 0 {name=x10}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D3.sym} 840 40 0 0 {name=x11}
 C {lab_wire.sym} 150 -460 0 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 150 -180 0 0 {name=p2 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 930 -180 0 0 {name=p3 sig_type=std_logic lab=VDD}
@@ -108,7 +108,7 @@ C {lab_wire.sym} 260 -660 0 1 {name=p22 sig_type=std_logic lab=VCLK_N}
 C {lab_wire.sym} 1100 -460 0 0 {name=p23 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1100 -280 0 0 {name=p24 sig_type=std_logic lab=VSS}
 C {ipin.sym} 60 -100 0 0 {name=p25 lab=VD}
-C {INV_D1.sym} 440 -520 0 0 {name=x12}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 440 -520 0 0 {name=x12}
 C {ipin.sym} 440 -660 0 0 {name=p28 lab=VRESET}
 C {lab_wire.sym} 640 -660 0 1 {name=p29 sig_type=std_logic lab=VRESET_N}
 C {lab_wire.sym} 530 -740 0 0 {name=p26 sig_type=std_logic lab=VDD}
@@ -122,7 +122,7 @@ C {lab_wire.sym} 360 0 0 1 {name=p35 sig_type=std_logic lab=VCLK}
 C {lab_wire.sym} 360 -240 0 1 {name=p36 sig_type=std_logic lab=VCLK_N}
 C {lab_wire.sym} 1140 -230 0 1 {name=p37 sig_type=std_logic lab=VCLK}
 C {opin.sym} 1500 -520 0 0 {name=p38 lab=VQ}
-C {INV_D1.sym} 1580 -200 0 0 {name=x13}
+C {/home/eamtastudent/GROTDC marzo/Esquematicos/INV_D1.sym} 1580 -200 0 0 {name=x13}
 C {lab_wire.sym} 1670 -440 0 0 {name=p39 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1670 -260 0 0 {name=p40 sig_type=std_logic lab=VSS}
 C {opin.sym} 1780 -340 0 0 {name=p41 lab=VQN}
