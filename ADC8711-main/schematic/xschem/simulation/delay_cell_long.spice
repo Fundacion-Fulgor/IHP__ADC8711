@@ -1,0 +1,75 @@
+** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_cell_long.sch
+.subckt delay_cell_long VDD IN OUT1 OUT3 VSS CTRL[2] CTRL[1] CTRL[0]
+*.PININFO IN:I VDD:B VSS:B OUT1:O OUT3:O CTRL[2:0]:I
+x1 OUT00 IN VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog
+x2 OUT2 OUT1 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog
+x3 OUT3 OUT2 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog
+x4 OUT0 OUT00 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog
+x5 OUT1 OUT0 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog
+.ends
+
+* expanding   symbol:  delay_prog.sym # of pins=5
+** sym_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog.sym
+** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog.sch
+.subckt delay_prog OUT IN VDD VSS CTRL[2] CTRL[1] CTRL[0]
+*.PININFO IN:I VDD:B VSS:B CTRL[2:0]:I OUT:O
+x1 OUT0 IN VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x2 OUT1 OUT0 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x3 OUT2 OUT1 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x4 OUT3 OUT2 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x5 OUT4 OUT3 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x6 OUT5 OUT4 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x7 OUT6 OUT5 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x8 OUT7 OUT6 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x9 OUT8 OUT7 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x10 OUT9 OUT8 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x11 OUT10 OUT9 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+x12 OUT OUT10 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
+.ends
+
+
+* expanding   symbol:  delay_prog_sub.sym # of pins=5
+** sym_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog_sub.sym
+** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog_sub.sch
+.subckt delay_prog_sub OUT IN VDD VSS CTRL[2] CTRL[1] CTRL[0]
+*.PININFO IN:I OUT:O VDD:B VSS:B CTRL[2:0]:I
+x1 VDD net1 IN VSS INV_D1
+x2 VDD OUT net2 VSS INV_D2
+x3 CTRL[0] VSS net2 net1 VDD CTRLN[0] TG_2C
+x4 CTRL[1] VSS net2 net1 VDD CTRLN[1] TG_2C
+x5 CTRL[2] VSS net2 net1 VDD CTRLN[2] TG_2C
+x6 VDD CTRLN[0] CTRL[0] VSS INV_D1
+x7 VDD CTRLN[1] CTRL[1] VSS INV_D1
+x8 VDD CTRLN[2] CTRL[2] VSS INV_D1
+.ends
+
+
+* expanding   symbol:  INV_D1.sym # of pins=4
+** sym_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D1.sym
+** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D1.sch
+.subckt INV_D1 VDD VOUT VIN VSS
+*.PININFO VDD:B VSS:B VOUT:O VIN:I
+MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
+MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
+.ends
+
+
+* expanding   symbol:  INV_D2.sym # of pins=4
+** sym_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D2.sym
+** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D2.sch
+.subckt INV_D2 VDD VOUT VIN VSS
+*.PININFO VDD:B VSS:B VOUT:O VIN:I
+MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.3u l=0.13u ng=1
+MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
+.ends
+
+
+* expanding   symbol:  TG_2C.sym # of pins=6
+** sym_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/TG_2C.sym
+** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/TG_2C.sch
+.subckt TG_2C VCTRLN VSS VOUT VIN VDD VCTRLP
+*.PININFO VCTRLN:B VCTRLP:B VOUT:O VIN:I VSS:B VDD:B
+MM1 VOUT VCTRLN VIN VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
+MM2 VOUT VCTRLP VIN VDD sg13_lv_pmos w=0.15u l=0.13u ng=1 m=2
+.ends
+
