@@ -106,6 +106,12 @@ N 1340 -130 1380 -130 {lab=OUT1}
 N 1620 -130 1660 -130 {lab=OUT}
 N 1500 -240 1500 -220 {lab=VDD}
 N 1500 -40 1500 -20 {lab=VSS}
+N -180 -970 -140 -970 {lab=CTRL[0]}
+N -180 -930 -140 -930 {lab=CTRL[1]}
+N -180 -890 -140 -890 {lab=CTRL[2]}
+N -180 -850 -140 -850 {lab=START}
+N -180 -810 -140 -810 {lab=STOP}
+N -180 -770 -140 -770 {lab=STOP}
 C {Counters_6bits.sym} 540 -590 0 0 {name=x5
 }
 C {Counters_regs_6bits.sym} 980 -560 0 0 {name=x6
@@ -302,3 +308,21 @@ C {lab_wire.sym} 1500 -240 0 0 {name=p89 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 1500 -20 0 0 {name=p90 sig_type=std_logic lab=VSS
 }
+C {lab_wire.sym} -180 -970 0 0 {name=p91 sig_type=std_logic lab=CTRL[0]
+}
+C {sg13g2_hv_antennanp.sym} -50 -970 0 0 {name=x13 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -930 0 0 {name=p92 sig_type=std_logic lab=CTRL[1]
+}
+C {sg13g2_hv_antennanp.sym} -50 -930 0 0 {name=x14 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -890 0 0 {name=p93 sig_type=std_logic lab=CTRL[2]
+}
+C {sg13g2_hv_antennanp.sym} -50 -890 0 0 {name=x15 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -850 0 0 {name=p94 sig_type=std_logic lab=START
+}
+C {sg13g2_hv_antennanp.sym} -50 -850 0 0 {name=x16 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -810 0 0 {name=p95 sig_type=std_logic lab=STOP
+}
+C {sg13g2_hv_antennanp.sym} -50 -810 0 0 {name=x17 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -770 0 0 {name=p96 sig_type=std_logic lab=RESET
+}
+C {sg13g2_hv_antennanp.sym} -50 -770 0 0 {name=x18 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
