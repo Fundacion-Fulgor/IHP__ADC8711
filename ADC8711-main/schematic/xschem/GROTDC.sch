@@ -44,7 +44,7 @@ N 620 -520 640 -520 {lab=COUT1,S1[5:0]}
 N 1200 -580 1200 -560 {lab=VDD}
 N 1200 -380 1200 -360 {lab=VSS}
 N 1320 -470 1360 -470 {lab=ADDER[7:0]}
-N 1060 -430 1080 -430 {lab=RESET}
+N 1060 -430 1080 -430 {lab=DRV_RESET}
 N 1040 -470 1080 -470 {lab=DECLK2}
 N 220 -1190 260 -1190 {lab=START}
 N 220 -1150 260 -1150 {lab=STOP}
@@ -92,7 +92,7 @@ N 120 -170 170 -170 {lab=MUX_ADDER}
 N 470 -230 510 -230 {lab=DRV_START}
 N 470 -210 510 -210 {lab=DRV_STOP}
 N 470 -190 510 -190 {lab=DRV_RESET}
-N 470 -170 520 -170 {lab=OUT}
+N 470 -170 520 -170 {lab=OUT1}
 N 1690 -370 1690 -310 {lab=DRV_CTRL[2:0]}
 N 470 -150 520 -150 {lab=DRV_CTRL[2:0]}
 N 120 -150 170 -150 {lab=CTRL[2:0]}
@@ -102,6 +102,16 @@ N 800 -190 840 -190 {lab=DRV_STOP}
 N 1120 -190 1160 -190 {lab=DECLK}
 N 1120 -150 1160 -150 {lab=DECLK2}
 N 800 -150 840 -150 {lab=DRV_CTRL[2:0]}
+N 1340 -130 1380 -130 {lab=OUT1}
+N 1620 -130 1660 -130 {lab=OUT}
+N 1500 -240 1500 -220 {lab=VDD}
+N 1500 -40 1500 -20 {lab=VSS}
+N -180 -970 -140 -970 {lab=CTRL[0]}
+N -180 -930 -140 -930 {lab=CTRL[1]}
+N -180 -890 -140 -890 {lab=CTRL[2]}
+N -180 -850 -140 -850 {lab=START}
+N -180 -810 -140 -810 {lab=STOP}
+N -180 -770 -140 -770 {lab=STOP}
 C {Counters_6bits.sym} 540 -590 0 0 {name=x5
 }
 C {Counters_regs_6bits.sym} 980 -560 0 0 {name=x6
@@ -132,7 +142,6 @@ C {lab_wire.sym} 560 -760 3 0 {name=p17 sig_type=std_logic lab=K0
 }
 C {lab_wire.sym} 600 -720 3 0 {name=p19 sig_type=std_logic lab=K2
 }
-C {lab_wire.sym} 620 -690 3 0 {name=p20 sig_type=std_logic lab=DRV_RESET}
 C {lab_wire.sym} 1040 -710 3 0 {name=p21 sig_type=std_logic lab=DECLK
 }
 C {lab_wire.sym} 1060 -690 3 0 {name=p22 sig_type=std_logic lab=DRV_RESET
@@ -164,10 +173,6 @@ C {lab_wire.sym} 920 -450 0 1 {name=p35 sig_type=std_logic lab=COUT2
 C {lab_wire.sym} 1200 -580 0 0 {name=p36 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 1200 -360 0 0 {name=p37 sig_type=std_logic lab=VSS
-}
-C {lab_wire.sym} 1040 -470 3 0 {name=p34 sig_type=std_logic lab=DECLK2
-}
-C {lab_wire.sym} 1060 -430 3 0 {name=p38 sig_type=std_logic lab=DRV_RESET
 }
 C {Counters__FA_regs_7bits.sym} 1040 -350 0 0 {name=x9
 }
@@ -265,7 +270,7 @@ C {lab_wire.sym} 510 -210 0 1 {name=p85 sig_type=std_logic lab=DRV_STOP
 }
 C {lab_wire.sym} 510 -190 0 1 {name=p86 sig_type=std_logic lab=DRV_RESET
 }
-C {lab_wire.sym} 520 -170 0 1 {name=p87 sig_type=std_logic lab=OUT
+C {lab_wire.sym} 520 -170 0 1 {name=p87 sig_type=std_logic lab=OUT1
 }
 C {Buffers_IO.sym} 320 -190 0 0 {name=x10}
 C {lab_wire.sym} 1690 -310 0 0 {name=p77 sig_type=std_logic lab=DRV_CTRL[2:0]
@@ -288,3 +293,36 @@ C {MUX_8_1_NI.sym} 1480 -520 0 0 {name=x4}
 C {delay_cell_long.sym} 1000 -170 0 0 {name=x12}
 C {lab_wire.sym} 800 -150 3 0 {name=p88 sig_type=std_logic lab=DRV_CTRL[2:0]
 }
+C {lab_wire.sym} 1060 -430 3 0 {name=p38 sig_type=std_logic lab=DRV_RESET
+}
+C {lab_wire.sym} 1040 -470 3 0 {name=p34 sig_type=std_logic lab=DECLK2
+}
+C {lab_wire.sym} 620 -690 3 0 {name=p20 sig_type=std_logic lab=DRV_RESET
+}
+C {lab_wire.sym} 1340 -130 0 0 {name=p98 sig_type=std_logic lab=OUT1
+}
+C {lab_wire.sym} 1660 -130 0 1 {name=p101 sig_type=std_logic lab=OUT
+}
+C {Buffers_adder.sym} 1280 50 0 0 {name=x11}
+C {lab_wire.sym} 1500 -240 0 0 {name=p89 sig_type=std_logic lab=VDD
+}
+C {lab_wire.sym} 1500 -20 0 0 {name=p90 sig_type=std_logic lab=VSS
+}
+C {lab_wire.sym} -180 -970 0 0 {name=p91 sig_type=std_logic lab=CTRL[0]
+}
+C {sg13g2_hv_antennanp.sym} -50 -970 0 0 {name=x13 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -930 0 0 {name=p92 sig_type=std_logic lab=CTRL[1]
+}
+C {sg13g2_hv_antennanp.sym} -50 -930 0 0 {name=x14 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -890 0 0 {name=p93 sig_type=std_logic lab=CTRL[2]
+}
+C {sg13g2_hv_antennanp.sym} -50 -890 0 0 {name=x15 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -850 0 0 {name=p94 sig_type=std_logic lab=START
+}
+C {sg13g2_hv_antennanp.sym} -50 -850 0 0 {name=x16 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -810 0 0 {name=p95 sig_type=std_logic lab=STOP
+}
+C {sg13g2_hv_antennanp.sym} -50 -810 0 0 {name=x17 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
+C {lab_wire.sym} -180 -770 0 0 {name=p96 sig_type=std_logic lab=RESET
+}
+C {sg13g2_hv_antennanp.sym} -50 -770 0 0 {name=x18 VDD=VDD VSS=VSS prefix=sg13g2_hv_ }
