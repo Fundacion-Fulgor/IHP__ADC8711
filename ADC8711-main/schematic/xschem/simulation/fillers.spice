@@ -1,0 +1,6 @@
+** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/fillers.sch
+.subckt fillers VDD VSS
+*.PININFO VDD:B VSS:B
+MM2 VDD VDD VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1
+MM1 VSS VSS VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
+.ends
