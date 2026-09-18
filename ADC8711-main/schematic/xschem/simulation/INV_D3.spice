@@ -1,4 +1,4 @@
-** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D3.sch
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D3.sch
 .subckt INV_D3 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=3

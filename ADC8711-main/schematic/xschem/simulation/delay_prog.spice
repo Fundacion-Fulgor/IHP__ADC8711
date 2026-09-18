@@ -1,4 +1,4 @@
-** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog.sch
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/delay_prog.sch
 .subckt delay_prog OUT IN VDD VSS CTRL[2] CTRL[1] CTRL[0]
 *.PININFO IN:I VDD:B VSS:B CTRL[2:0]:I OUT:O
 x1 OUT0 IN VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
@@ -16,8 +16,8 @@ x12 OUT OUT10 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
 .ends
 
 * expanding   symbol:  delay_prog_sub.sym # of pins=5
-** sym_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog_sub.sym
-** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog_sub.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/delay_prog_sub.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/delay_prog_sub.sch
 .subckt delay_prog_sub OUT IN VDD VSS CTRL[2] CTRL[1] CTRL[0]
 *.PININFO IN:I OUT:O VDD:B VSS:B CTRL[2:0]:I
 x1 VDD net1 IN VSS INV_D1
@@ -32,8 +32,8 @@ x8 VDD CTRLN[2] CTRL[2] VSS INV_D1
 
 
 * expanding   symbol:  INV_D1.sym # of pins=4
-** sym_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D1.sym
-** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D1.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sch
 .subckt INV_D1 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
@@ -42,8 +42,8 @@ MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
 
 
 * expanding   symbol:  INV_D2.sym # of pins=4
-** sym_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D2.sym
-** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D2.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D2.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D2.sch
 .subckt INV_D2 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.3u l=0.13u ng=1
@@ -52,8 +52,8 @@ MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
 
 
 * expanding   symbol:  TG_2C.sym # of pins=6
-** sym_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/TG_2C.sym
-** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/TG_2C.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/TG_2C.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/TG_2C.sch
 .subckt TG_2C VCTRLN VSS VOUT VIN VDD VCTRLP
 *.PININFO VCTRLN:B VCTRLP:B VOUT:O VIN:I VSS:B VDD:B
 MM1 VOUT VCTRLN VIN VSS sg13_lv_nmos w=0.15u l=0.13u ng=1

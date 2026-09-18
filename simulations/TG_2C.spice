@@ -1,4 +1,4 @@
-** sch_path: /home/ivan_torres/UNICASS/IHP__ADC8711/ADC8711-main/schematic/xschem/TG_2C.sch
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/TG_2C.sch
 **.subckt TG_2C VCTRLN VSS VOUT VIN VDD VCTRLP
 *.iopin VCTRLN
 *.iopin VCTRLP

@@ -109,13 +109,13 @@ N 1530 -520 1570 -520 {lab=STOP}
 N 1530 -480 1570 -480 {lab=RESET}
 N 1760 -280 1790 -280 {lab=VSS}
 N 1760 -300 1790 -300 {lab=VDD}
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/Counters_6bits.sym} 2240 -400 0 0 {name=x5
+C {Counters_6bits.sym} 2240 -400 0 0 {name=x5
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/Counters_regs_6bits.sym} 2680 -370 0 0 {name=x6
+C {Counters_regs_6bits.sym} 2680 -370 0 0 {name=x6
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/Counter_FA_6bits.sym} 1880 -190 0 0 {name=x7
+C {Counter_FA_6bits.sym} 1880 -190 0 0 {name=x7
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/Counter_FA_7bits.sym} 2080 -110 0 0 {name=x8
+C {Counter_FA_7bits.sym} 2080 -110 0 0 {name=x8
 }
 C {lab_wire.sym} 2460 -440 0 0 {name=p9 sig_type=std_logic lab=VSS
 }
@@ -177,7 +177,7 @@ C {lab_wire.sym} 2740 -280 3 0 {name=p34 sig_type=std_logic lab=DECLK2
 }
 C {lab_wire.sym} 2760 -240 3 0 {name=p38 sig_type=std_logic lab=RESET
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/Counters__FA_regs_7bits.sym} 2740 -160 0 0 {name=x9
+C {Counters__FA_regs_7bits.sym} 2740 -160 0 0 {name=x9
 }
 C {lab_wire.sym} 3060 -280 0 1 {name=p39 sig_type=std_logic lab=ADDER[7:0]
 }
@@ -195,7 +195,7 @@ C {lab_wire.sym} 2600 -840 0 0 {name=p2 sig_type=std_logic lab=VSS
 }
 C {lab_wire.sym} 2800 -1010 0 0 {name=p1 sig_type=std_logic lab=VDD
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/SR_Latch.sym} 2510 -830 0 0 {name=x1}
+C {SR_Latch.sym} 2510 -830 0 0 {name=x1}
 C {lab_wire.sym} 2600 -1000 0 0 {name=p3 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 2490 -940 0 0 {name=p4 sig_type=std_logic lab=DRV_START
@@ -204,7 +204,7 @@ C {lab_wire.sym} 2490 -900 0 0 {name=p5 sig_type=std_logic lab=DRV_STOP
 }
 C {lab_wire.sym} 2710 -940 0 0 {name=p6 sig_type=std_logic lab=EN
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/GRO.sym} 2740 -720 0 0 {name=x2
+C {GRO.sym} 2740 -720 0 0 {name=x2
 }
 C {lab_wire.sym} 2800 -710 0 0 {name=p7 sig_type=std_logic lab=VSS
 }
@@ -216,7 +216,7 @@ C {lab_wire.sym} 3140 -710 0 0 {name=p44 sig_type=std_logic lab=IN2
 }
 C {lab_wire.sym} 2020 -430 0 0 {name=p51 sig_type=std_logic lab=VSS
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/Modi_Buffers.sym} 1800 -370 0 0 {name=x3
+C {Modi_Buffers.sym} 1800 -370 0 0 {name=x3
 }
 C {lab_wire.sym} 2170 -590 3 1 {name=p52 sig_type=std_logic lab=K0
 }
@@ -276,14 +276,14 @@ C {lab_wire.sym} 2210 0 0 1 {name=p86 sig_type=std_logic lab=DRV_RESET
 }
 C {lab_wire.sym} 2220 20 0 1 {name=p87 sig_type=std_logic lab=OUT
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/Buffers_IO.sym} 2020 0 0 0 {name=x10}
+C {Buffers_IO.sym} 2020 0 0 0 {name=x10}
 C {lab_wire.sym} 3390 -120 0 0 {name=p77 sig_type=std_logic lab=DRV_CTRL[2:0]
 }
 C {lab_wire.sym} 2220 40 0 1 {name=p78 sig_type=std_logic lab=DRV_CTRL[2:0]
 }
 C {lab_wire.sym} 1820 40 0 0 {name=p79 sig_type=std_logic lab=CTRL[2:0]
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/Delay_cell.sym} 2930 -10 0 0 {name=x11}
+C {Delay_cell.sym} 2930 -10 0 0 {name=x11}
 C {lab_wire.sym} 2930 70 0 0 {name=p45 sig_type=std_logic lab=VSS
 }
 C {lab_wire.sym} 2930 -90 0 0 {name=p80 sig_type=std_logic lab=VDD

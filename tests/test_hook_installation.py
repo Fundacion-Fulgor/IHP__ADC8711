@@ -28,7 +28,7 @@ class TestHookInstallation(unittest.TestCase):
         self.githooks_dir = self.repo_dir / ".githooks"
         self.githooks_dir.mkdir()
         self.source_hook = self.githooks_dir / "pre-commit"
-        self.source_hook.write_text('#!/bin/sh\nroot="$(git rev-parse --show-toplevel)"\nexec python3 "$root/scripts/check_xschem_paths.py" --staged\n')
+        self.source_hook.write_bytes((eda_path.parent / ".githooks" / "pre-commit").read_bytes())
         self.source_hook.chmod(0o755)
 
     def tearDown(self):
@@ -66,7 +66,7 @@ class TestHookInstallation(unittest.TestCase):
         self.assertEqual(rc, 1)
         self.assertEqual(target.read_bytes(), custom_hook_content)
         err_msg = stderr_buf.getvalue()
-        self.assertIn('python3 "$(git rev-parse --show-toplevel)/scripts/check_xschem_paths.py" --staged', err_msg)
+        self.assertIn('sh "$(git rev-parse --show-toplevel)/.githooks/pre-commit" || exit $?', err_msg)
 
     def test_custom_hookspath_preservation(self):
         custom_dir = self.repo_dir / "custom_hooks"
@@ -80,7 +80,7 @@ class TestHookInstallation(unittest.TestCase):
         self.assertEqual(rc, 1)
         self.assertFalse((custom_dir / "pre-commit").exists())
         err_msg = stderr_buf.getvalue()
-        self.assertIn('python3 "$(git rev-parse --show-toplevel)/scripts/check_xschem_paths.py" --staged', err_msg)
+        self.assertIn('sh "$(git rev-parse --show-toplevel)/.githooks/pre-commit" || exit $?', err_msg)
 
     def test_custom_hookspath_pointing_to_project_githooks(self):
         subprocess.run(["git", "config", "core.hooksPath", ".githooks"], cwd=str(self.repo_dir), check=True)
@@ -123,6 +123,7 @@ class TestHookInstallation(unittest.TestCase):
         self.assertEqual(rc, 1)
         self.assertTrue(target.is_symlink())
         self.assertFalse(nonexistent.exists())
+        self.assertIn('sh "$(git rev-parse --show-toplevel)/.githooks/pre-commit" || exit $?', stderr_buf.getvalue())
 
     def test_matching_content_symlink_refused(self):
         hooks_dir = self.repo_dir / ".git" / "hooks"
@@ -139,6 +140,7 @@ class TestHookInstallation(unittest.TestCase):
 
         self.assertEqual(rc, 1)
         self.assertTrue(target.is_symlink())
+        self.assertIn('sh "$(git rev-parse --show-toplevel)/.githooks/pre-commit" || exit $?', stderr_buf.getvalue())
 
     def test_unrelated_existing_hooks_intact(self):
         hooks_dir = self.repo_dir / ".git" / "hooks"
@@ -237,13 +239,81 @@ class TestHookInstallation(unittest.TestCase):
         self.assertTrue(os.access(tracked_hook, os.X_OK))
 
         lines = tracked_hook.read_text().splitlines()
-        self.assertTrue(len(lines) >= 2)
+        self.assertTrue(len(lines) >= 3)
         self.assertEqual(lines[0], "#!/bin/sh")
+        self.assertEqual(lines[1], "set -eu")
         for line in lines[1:]:
             self.assertFalse(line.strip().startswith("#"))
         content = tracked_hook.read_text()
         self.assertIn("git rev-parse --show-toplevel", content)
+        self.assertIn('"$root/scripts/fix_xschem_paths.py" --staged', content)
         self.assertIn('"$root/scripts/check_xschem_paths.py" --staged', content)
+
+    def test_install_hooks_upgrades_known_hooks_and_preserves_custom_hook(self):
+        target = self.repo_dir / ".git" / "hooks" / "pre-commit"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        for old_hook in eda.KNOWN_OLD_HOOKS:
+            with self.subTest(old_hook=old_hook):
+                target.write_bytes(old_hook)
+                target.chmod(0o755)
+                self.assertEqual(eda.cmd_install_hooks(self.repo_dir), 0)
+                self.assertEqual(target.read_bytes(), self.source_hook.read_bytes())
+                self.assertTrue(os.access(target, os.X_OK))
+
+        custom = b"#!/bin/sh\necho custom\nexit 0\n"
+        target.write_bytes(custom)
+        target.chmod(0o755)
+        stderr = io.StringIO()
+        with patch("sys.stderr", stderr):
+            self.assertEqual(eda.cmd_install_hooks(self.repo_dir), 1)
+        self.assertEqual(target.read_bytes(), custom)
+        self.assertIn('sh "$(git rev-parse --show-toplevel)/.githooks/pre-commit" || exit $?', stderr.getvalue())
+
+    def test_install_hooks_upgrade_write_error(self):
+        target = self.repo_dir / ".git" / "hooks" / "pre-commit"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(eda.KNOWN_OLD_HOOKS[0])
+        target.chmod(0o755)
+        stderr = io.StringIO()
+        with patch.object(Path, "write_bytes", side_effect=OSError("read-only")):
+            with patch("sys.stderr", stderr):
+                self.assertEqual(eda.cmd_install_hooks(self.repo_dir), 1)
+        self.assertIn("Error al actualizar hook", stderr.getvalue())
+
+    def test_manual_hook_chaining_preserves_remainder_and_failure(self):
+        scripts = self.repo_dir / "scripts"
+        scripts.mkdir()
+        (scripts / "fix_xschem_paths.py").write_text("import sys\nsys.exit(0)\n")
+        checker = scripts / "check_xschem_paths.py"
+        checker.write_text("import sys\nsys.exit(0)\n")
+        custom = self.repo_dir / "custom-pre-commit"
+        custom.write_text(
+            "#!/bin/sh\n"
+            "root=\"$(git rev-parse --show-toplevel)\"\n"
+            "sh \"$root/.githooks/pre-commit\" || exit $?\n"
+            "touch \"$root/custom-ran\"\n"
+        )
+        custom.chmod(0o755)
+
+        success = subprocess.run(["sh", str(custom)], cwd=str(self.repo_dir))
+        self.assertEqual(success.returncode, 0)
+        self.assertTrue((self.repo_dir / "custom-ran").is_file())
+
+        (self.repo_dir / "custom-ran").unlink()
+        checker.write_text("import sys\nsys.exit(7)\n")
+        failure = subprocess.run(["sh", str(custom)], cwd=str(self.repo_dir))
+        self.assertEqual(failure.returncode, 7)
+        self.assertFalse((self.repo_dir / "custom-ran").exists())
+
+    def test_known_old_hooks_definitions(self):
+        self.assertEqual(len(eda.KNOWN_OLD_HOOKS), 2)
+        self.assertTrue(eda.KNOWN_OLD_HOOKS[0].startswith(b"#!/bin/sh\n"))
+        self.assertNotIn(b"set -eu", eda.KNOWN_OLD_HOOKS[0])
+        self.assertNotIn(b"fix_xschem_paths.py", eda.KNOWN_OLD_HOOKS[0])
+        self.assertTrue(eda.KNOWN_OLD_HOOKS[1].startswith(b"#!/bin/sh\n"))
+        self.assertNotIn(b"set -eu", eda.KNOWN_OLD_HOOKS[1])
+        self.assertIn(b"fix_xschem_paths.py", eda.KNOWN_OLD_HOOKS[1])
+        self.assertIn(b"set -eu", self.source_hook.read_bytes())
 
     def test_main_cli_install_hooks(self):
         with patch.object(eda, "get_repo_root", return_value=self.repo_dir):

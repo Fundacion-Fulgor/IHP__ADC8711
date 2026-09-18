@@ -97,7 +97,24 @@ To ensure portability across different contributor workstations and CI environme
   - **`$netlist_dir`**: Valid in Tcl launcher scripts and netlist/raw output directory configuration.
   - **`$PDK_ROOT` / `$PDK`**: Valid only within `tcleval` SPICE model include and library directives.
   - **Prohibited**: Hardcoded personal user paths (such as `/home/username/...` or `/Users/...`).
-- **Validation scope**: Rules scope source dependency references (instantiated symbols and subcircuit schematics) and tracked `.spice`/`.cir` include directives, not tool-generated provenance comments.
-- **Hook automation**: Running `./eda setup` initializes submodules and automatically installs the shared Git pre-commit hook. Existing clones can run `./eda install-hooks` to configure the hook only (without touching submodules or requiring EDA containers/PDKs).
+- **Validation scope and automatic rewriting coverage**:
+  - **Fixer automatic coverage**: Strictly scoped to component references (`C {path} ...`) and proven repository provenance comments in `.spice`/`.cir`.
+  - **Checker validation-only**: Executable directives, embedded Tcl scripts, and complex attributes remain checker validation-only and will never be automatically rewritten; never imply full automatic rewriting.
+- **Fixer CLI interface**:
+  - `--staged`: Normalizes staged changes in the Git index (default mode).
+  - `--check`: Read-only verification mode that fails if fixes are needed without modifying files.
+  - `--all --check`: Read-only full index scan across all tracked sources in the repository (requires `--check`).
+  - `--library-root <dir>`: Explicit installed library search root for symbol resolution (repeatable for multiple roots).
+- **Safety guarantees**:
+  - **Safe partial staging refusal**: The fixer refuses to overwrite files that have unstaged working-tree modifications or mode changes when fixes are needed, protecting against accidental loss of uncommitted work.
+  - **Never basename guess**: Unresolved, ambiguous, or other-machine paths require manual review or an explicit `--library-root`; the tool never guesses destinations from basename alone.
+- **Hook automation and safe upgrades**:
+  - Running `./eda setup` initializes submodules and automatically installs the shared Git pre-commit hook.
+  - On existing clones, `./eda install-hooks` installs or safely upgrades the hook without modifying submodules.
+  - The installer safely upgrades exact known earlier hook revisions (including the original checker-only hook and the prototype fixer/checker hook).
+  - Existing custom pre-commit hooks, symlinks, and custom `core.hooksPath` configurations are preserved. When manual chaining is needed, a notice is emitted instructing contributors to invoke the full tracked hook:
+    ```sh
+    sh "$(git rev-parse --show-toplevel)/.githooks/pre-commit" || exit $?
+    ```
 - **Local checking**: Run `./eda check-paths` to inspect tracked files or `./eda check-paths --staged` to inspect staged changes after `git add`.
-- **CI enforcement**: Because local Git hooks can be bypassed (e.g., via `git commit --no-verify`), repository administrators should configure the `Xschem path portability` CI workflow job as a required status check in GitHub branch protection rules (a manual admin setting).
+- **CI enforcement**: CI executes in read-only mode (`permissions: contents: read`), running `python3 scripts/fix_xschem_paths.py --all --check`, followed by `python3 scripts/check_xschem_paths.py` and the unit test suite. Because local Git hooks can be bypassed (e.g., via `git commit --no-verify`), repository administrators should configure the `Xschem path portability` CI workflow job as a required status check in GitHub branch protection rules (a manual admin setting).
