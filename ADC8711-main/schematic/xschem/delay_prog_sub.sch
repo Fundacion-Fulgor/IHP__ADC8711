@@ -50,8 +50,8 @@ N 580 -380 580 -340 {lab=VSS}
 N 80 -160 100 -160 {lab=#net1}
 N 320 -160 340 -160 {lab=#net2}
 N 480 -160 560 -160 {lab=#net3}
-C {/foss/designs/GRO-TDC/std_cells/INV_D1.sym} -80 -20 0 0 {name=x1}
-C {/foss/designs/GRO-TDC/std_cells/INV_D2.sym} 320 -20 0 0 {name=x2}
+C {INV_D1.sym} -80 -20 0 0 {name=x1}
+C {INV_D2.sym} 320 -20 0 0 {name=x2}
 C {lab_wire.sym} 10 -230 0 0 {name=p21 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 410 -230 0 0 {name=p1 sig_type=std_logic lab=VDD
@@ -60,9 +60,9 @@ C {lab_wire.sym} 10 -80 0 0 {name=p2 sig_type=std_logic lab=VSS
 }
 C {lab_wire.sym} 410 -80 0 0 {name=p3 sig_type=std_logic lab=VSS
 }
-C {/foss/designs/GRO-TDC/std_cells/TG_2C.sym} 80 0 0 0 {name=x3}
-C {/foss/designs/GRO-TDC/std_cells/TG_2C.sym} 80 220 0 0 {name=x4}
-C {/foss/designs/GRO-TDC/std_cells/TG_2C.sym} 80 440 0 0 {name=x5}
+C {TG_2C.sym} 80 0 0 0 {name=x3}
+C {TG_2C.sym} 80 220 0 0 {name=x4}
+C {TG_2C.sym} 80 440 0 0 {name=x5}
 C {lab_wire.sym} 180 -80 0 0 {name=p5 sig_type=std_logic lab=VSS
 }
 C {lab_wire.sym} 220 -80 0 1 {name=p6 sig_type=std_logic lab=CTRL[0]
@@ -92,7 +92,7 @@ C {opin.sym} 560 -160 0 0 {name=p48 lab=OUT}
 C {iopin.sym} -260 -140 0 1 {name=p46 lab=VDD}
 C {iopin.sym} -260 -100 0 1 {name=p47 lab=VSS}
 C {ipin.sym} -260 -60 0 0 {name=p70 lab=CTRL[2:0]}
-C {/foss/designs/GRO-TDC/std_cells/INV_D1.sym} -210 -280 0 0 {name=x6}
+C {INV_D1.sym} -210 -280 0 0 {name=x6}
 C {lab_wire.sym} -120 -490 0 0 {name=p16 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} -120 -340 0 0 {name=p17 sig_type=std_logic lab=VSS
@@ -101,7 +101,7 @@ C {lab_wire.sym} -210 -420 0 0 {name=p18 sig_type=std_logic lab=CTRL[0]
 }
 C {lab_wire.sym} -10 -420 0 1 {name=p19 sig_type=std_logic lab=CTRLN[0]
 }
-C {/foss/designs/GRO-TDC/std_cells/INV_D1.sym} 150 -280 0 0 {name=x7}
+C {INV_D1.sym} 150 -280 0 0 {name=x7}
 C {lab_wire.sym} 240 -490 0 0 {name=p20 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 240 -340 0 0 {name=p22 sig_type=std_logic lab=VSS
@@ -110,7 +110,7 @@ C {lab_wire.sym} 150 -420 0 0 {name=p23 sig_type=std_logic lab=CTRL[1]
 }
 C {lab_wire.sym} 350 -420 0 1 {name=p24 sig_type=std_logic lab=CTRLN[1]
 }
-C {/foss/designs/GRO-TDC/std_cells/INV_D1.sym} 490 -280 0 0 {name=x8}
+C {INV_D1.sym} 490 -280 0 0 {name=x8}
 C {lab_wire.sym} 580 -490 0 0 {name=p25 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 580 -340 0 0 {name=p26 sig_type=std_logic lab=VSS
