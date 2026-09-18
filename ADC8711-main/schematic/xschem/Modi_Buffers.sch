@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -95,7 +95,7 @@ C {iopin.sym} 320 -640 0 1 {name=p31 lab=VDD}
 C {iopin.sym} 320 -600 0 1 {name=p32 lab=VSS}
 C {INV_D1.sym} 410 -480 1 0 {name=x3[1:0]}
 C {INV_D1.sym} 840 -480 1 0 {name=x4[1:0]}
-C {INV_D1.sym} 410 -300 1 0 {name=x5[1:0]}
-C {INV_D1.sym} 840 -300 1 0 {name=x6[1:0]}
+C {INV_D2.sym} 410 -300 1 0 {name=x5[1:0]}
+C {INV_D2.sym} 840 -300 1 0 {name=x6[1:0]}
 C {INV05.sym} 630 -120 1 1 {name=x1}
 C {INV05.sym} 1060 -120 1 1 {name=x2}

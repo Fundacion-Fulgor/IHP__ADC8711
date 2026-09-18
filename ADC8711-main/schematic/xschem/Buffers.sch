@@ -15,15 +15,15 @@ N 130 -640 150 -640 {lab=VSS}
 N 230 -640 250 -640 {lab=VDD}
 N 350 -640 370 -640 {lab=VSS}
 N 450 -640 470 -640 {lab=VDD}
-N 190 -570 190 -550 {lab=K0}
-N 190 -550 410 -550 {lab=K0}
+N 190 -570 190 -550 {lab=OUT}
+N 190 -550 410 -550 {lab=OUT}
 N 190 -720 190 -690 {lab=#net1}
 N 190 -910 190 -870 {lab=IN}
-N 190 -550 190 -530 {lab=K0}
+N 190 -550 190 -530 {lab=OUT}
 N 410 -720 410 -710 {lab=#net1}
 N 190 -720 410 -720 {lab=#net1}
 N 190 -750 190 -720 {lab=#net1}
-N 410 -590 410 -550 {lab=K0}
+N 410 -590 410 -550 {lab=OUT}
 C {ipin.sym} 170 -970 0 0 {name=p25 lab=IN}
 C {iopin.sym} 650 -970 0 1 {name=p31 lab=VDD}
 C {iopin.sym} 650 -930 0 1 {name=p32 lab=VSS}

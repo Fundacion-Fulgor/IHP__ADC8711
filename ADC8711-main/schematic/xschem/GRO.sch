@@ -148,7 +148,7 @@ C {sg13g2_pr/sg13_lv_nmos.sym} 1170 -80 0 0 {name=M4
 l=0.13u
 w=0.15u
 ng=1
-m=16
+m=15
 model=sg13_lv_nmos
 spiceprefix=X
 }
@@ -160,7 +160,7 @@ C {sg13g2_pr/sg13_lv_nmos.sym} 630 -80 0 0 {name=M3
 l=0.13u
 w=0.15u
 ng=1
-m=16
+m=15
 model=sg13_lv_nmos
 spiceprefix=X
 }
@@ -172,7 +172,7 @@ C {sg13g2_pr/sg13_lv_nmos.sym} 910 -80 0 0 {name=M5
 l=0.13u
 w=0.15u
 ng=1
-m=16
+m=15
 model=sg13_lv_nmos
 spiceprefix=X
 }

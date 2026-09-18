@@ -44,7 +44,7 @@ N 1040 90 1100 90 {lab=VDD}
 N 1280 90 1330 90 {lab=VSS}
 N 1530 90 1590 90 {lab=VDD}
 N 1770 90 1820 90 {lab=VSS}
-N 440 -770 480 -770 {lab=DRV_ADDER}
+N 440 -770 480 -770 {lab=DRV_CTRL[2:0]}
 C {ipin.sym} 170 -970 0 0 {name=p25 lab=DRV_START}
 C {iopin.sym} 650 -970 0 1 {name=p31 lab=VDD}
 C {iopin.sym} 650 -930 0 1 {name=p32 lab=VSS}

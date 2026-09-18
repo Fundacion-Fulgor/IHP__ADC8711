@@ -19,12 +19,12 @@ N 400 -230 400 -190 {lab=VSS}
 N 440 -370 440 -330 {lab=VDD}
 N 440 -230 440 -190 {lab=VS[1]}
 N 310 -290 390 -290 {lab=#net1}
-N 310 -270 390 -270 {lab=#net2}
 N 310 -380 310 -290 {lab=#net1}
 N 240 -380 310 -380 {lab=#net1}
 N 310 -270 310 -180 {lab=#net2}
 N 240 -180 310 -180 {lab=#net2}
 N 490 -280 590 -280 {lab=VOUT}
+N 310 -270 390 -270 {lab=#net2}
 C {MUX_2_1_NI.sym} 110 -300 0 0 {name=x3}
 C {lab_wire.sym} 190 -270 2 0 {name=p12 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 150 -290 2 0 {name=p13 sig_type=std_logic lab=VSS}
