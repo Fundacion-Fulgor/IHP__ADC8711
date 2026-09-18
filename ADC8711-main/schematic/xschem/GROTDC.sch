@@ -106,7 +106,7 @@ N 1530 -640 1570 -640 {lab=CTRL[1]}
 N 1530 -600 1570 -600 {lab=CTRL[2]}
 N 1530 -560 1570 -560 {lab=START}
 N 1530 -520 1570 -520 {lab=STOP}
-N 1530 -480 1570 -480 {lab=STOP}
+N 1530 -480 1570 -480 {lab=RESET}
 N 1760 -280 1790 -280 {lab=VSS}
 N 1760 -300 1790 -300 {lab=VDD}
 C {/home/eamtastudent/GROTDC marzo/Esquematicos/Counters_6bits.sym} 2240 -400 0 0 {name=x5
@@ -254,7 +254,7 @@ C {lab_wire.sym} 3520 -400 0 1 {name=p68 sig_type=std_logic lab=MUX_ADDER
 }
 C {lab_wire.sym} 3350 -160 0 0 {name=p69 sig_type=std_logic lab=VSS
 }
-C {/home/eamtastudent/GROTDC marzo/Esquematicos/MUX_8_1.sym} 3180 -330 0 0 {name=x4}
+C {MUX_8_1_NI.sym} 3180 -330 0 0 {name=x4}
 C {ipin.sym} 1920 -880 0 0 {name=p70 lab=CTRL[2:0]}
 C {lab_wire.sym} 2020 110 0 0 {name=p71 sig_type=std_logic lab=VSS
 }
