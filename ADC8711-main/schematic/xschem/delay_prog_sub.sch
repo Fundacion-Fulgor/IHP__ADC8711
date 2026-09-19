@@ -12,21 +12,21 @@ N 410 -120 410 -80 {lab=VSS}
 N 100 -160 120 -160 {lab=#net1}
 N 340 -160 360 -160 {lab=#net2}
 N 180 -100 180 -80 {lab=VSS}
-N 220 -100 220 -80 {lab=CTRL[0]}
-N 220 -20 220 0 {lab=CTRLN[1]}
+N 220 -100 220 -80 {lab=CTRLN[0]}
+N 220 -20 220 0 {lab=CTRL[1]}
 N 180 -20 180 0 {lab=VDD}
 N 180 120 180 140 {lab=VSS}
-N 220 120 220 140 {lab=CTRL[1]}
+N 220 120 220 140 {lab=CTRLN[1]}
 N 180 -240 180 -220 {lab=VDD}
-N 220 -240 220 -220 {lab=CTRLN[0]}
+N 220 -240 220 -220 {lab=CTRL[0]}
 N 100 60 120 60 {lab=#net1}
 N 100 -160 100 60 {lab=#net1}
 N 320 60 340 60 {lab=#net2}
 N 340 -160 340 60 {lab=#net2}
-N 220 200 220 220 {lab=CTRLN[2]}
+N 220 200 220 220 {lab=CTRL[2]}
 N 180 200 180 220 {lab=VDD}
 N 180 340 180 360 {lab=VSS}
-N 220 340 220 360 {lab=CTRL[2]}
+N 220 340 220 360 {lab=CTRLP[2]}
 N 100 280 120 280 {lab=#net1}
 N 100 60 100 280 {lab=#net1}
 N 320 280 340 280 {lab=#net2}
@@ -65,27 +65,27 @@ C {TG_2C.sym} 80 220 0 0 {name=x4}
 C {TG_2C.sym} 80 440 0 0 {name=x5}
 C {lab_wire.sym} 180 -80 0 0 {name=p5 sig_type=std_logic lab=VSS
 }
-C {lab_wire.sym} 220 -80 0 1 {name=p6 sig_type=std_logic lab=CTRL[0]
+C {lab_wire.sym} 220 -80 0 1 {name=p6 sig_type=std_logic lab=CTRLN[0]
 }
-C {lab_wire.sym} 220 -240 0 1 {name=p7 sig_type=std_logic lab=CTRLN[0]
+C {lab_wire.sym} 220 -240 0 1 {name=p7 sig_type=std_logic lab=CTRL[0]
 }
 C {lab_wire.sym} 180 -20 0 0 {name=p8 sig_type=std_logic lab=VDD
 }
-C {lab_wire.sym} 220 -20 0 1 {name=p9 sig_type=std_logic lab=CTRLN[1]
+C {lab_wire.sym} 220 -20 0 1 {name=p9 sig_type=std_logic lab=CTRL[1]
 }
 C {lab_wire.sym} 180 140 0 0 {name=p10 sig_type=std_logic lab=VSS
 }
-C {lab_wire.sym} 220 140 0 1 {name=p11 sig_type=std_logic lab=CTRL[1]
+C {lab_wire.sym} 220 140 0 1 {name=p11 sig_type=std_logic lab=CTRLN[1]
 }
 C {lab_wire.sym} 180 -240 0 0 {name=p4 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 180 200 0 0 {name=p12 sig_type=std_logic lab=VDD
 }
-C {lab_wire.sym} 220 200 0 1 {name=p13 sig_type=std_logic lab=CTRLN[2]
+C {lab_wire.sym} 220 200 0 1 {name=p13 sig_type=std_logic lab=CTRL[2]
 }
 C {lab_wire.sym} 180 360 0 0 {name=p14 sig_type=std_logic lab=VSS
 }
-C {lab_wire.sym} 220 360 0 1 {name=p15 sig_type=std_logic lab=CTRL[2]
+C {lab_wire.sym} 220 360 0 1 {name=p15 sig_type=std_logic lab=CTRLN[2]
 }
 C {ipin.sym} -100 -160 0 0 {name=p40 lab=IN}
 C {opin.sym} 560 -160 0 0 {name=p48 lab=OUT}
