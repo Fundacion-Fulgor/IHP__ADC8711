@@ -1,8 +1,10 @@
-# Salidas generadas de simulación (no committear)
+# Salidas generadas de simulación y extracción (no committear)
 runs/
 *.raw
 *.log
 *.out
+*.cir
+lvs_run_*
 
 # Archivos de respaldo y temporales
 *~
@@ -15,7 +17,8 @@ Thumbs.db
 # Cache de Python
 __pycache__/
 *.py[cod]
-
 *:Zone.Identifier
-lvs_run*
+ADC8711-main/layout/klayout/backups
 backups/
+simulations/
+ADC8711-main/schematic/xschem/simulation/
