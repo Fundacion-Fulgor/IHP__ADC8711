@@ -98,7 +98,7 @@ To ensure portability across different contributor workstations and CI environme
   - **`$PDK_ROOT` / `$PDK`**: Valid only within `tcleval` SPICE model include and library directives.
   - **Prohibited**: Hardcoded personal user paths (such as `/home/username/...` or `/Users/...`).
 - **Validation scope and automatic rewriting coverage**:
-  - **Fixer automatic coverage**: Strictly scoped to component references (`C {path} ...`) and proven repository provenance comments in `.spice`/`.cir`.
+  - **Fixer automatic coverage**: Strictly scoped to component references (`C {path} ...`) in `.sch` and `.sym` files. Generated `.spice`/`.cir` comments, including `** sch_path:` and `** sym_path:`, are ignored and preserved byte-for-byte; absolute paths in comments do not cause check failures.
   - **Checker validation-only**: Executable directives, embedded Tcl scripts, and complex attributes remain checker validation-only and will never be automatically rewritten; never imply full automatic rewriting.
 - **Fixer CLI interface**:
   - `--staged`: Normalizes staged changes in the Git index (default mode).

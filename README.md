@@ -24,7 +24,7 @@ The hook normalizes exact tracked absolute Xschem component references in staged
 Safety and coverage rules:
 - **Safe partial staging refusal**: the fixer refuses to overwrite files that have unstaged modifications or mode changes in the working tree when fixes are needed.
 - **Never basename guess**: unresolved, ambiguous, or other-machine references require manual review or an explicit `--library-root`; the tool never guesses destinations from basename alone.
-- **Automatic rewriting coverage**: strictly scoped to component references (`C {path} ...`) plus proven repository provenance comments in `.spice`/`.cir`.
+- **Automatic rewriting coverage**: strictly scoped to component references (`C {path} ...`) in `.sch` and `.sym` files. Generated `.spice`/`.cir` comments, including `** sch_path:` and `** sym_path:`, are ignored and preserved byte-for-byte, even when they contain absolute paths.
 - **Validation-only scope**: executable directives, embedded Tcl scripts, and complex attributes remain checker validation-only; they are never automatically rewritten.
 
 ## Contributing
