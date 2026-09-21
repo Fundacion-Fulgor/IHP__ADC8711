@@ -20,8 +20,8 @@ N 1320 -740 1360 -740 {lab=D1[5:0]}
 N 1320 -720 1340 -720 {lab=D2[5:0]}
 N 1040 -710 1080 -710 {lab=DECLK}
 N 1060 -690 1080 -690 {lab=DRV_RESET}
-N 880 -760 940 -760 {lab=C0_B[5:0]}
-N 880 -720 940 -720 {lab=C2_B[5:0]}
+N 880 -760 940 -760 {lab=net1[5:0]}
+N 880 -720 940 -720 {lab=net3[5:0]}
 N 620 -690 640 -690 {lab=DRV_RESET}
 N 600 -720 640 -720 {lab=K2}
 N 580 -740 640 -740 {lab=K1}
@@ -107,10 +107,10 @@ N -180 -810 -140 -810 {lab=STOP}
 N -180 -770 -140 -770 {lab=RESET}
 N -0 -550 30 -550 {lab=VSS}
 N 0 -570 30 -570 {lab=VDD}
-N 880 -740 940 -740 {lab=C1_B[5:0]}
-N 1020 -790 1080 -790 {lab=C0_B[5:0]}
+N 880 -740 940 -740 {lab=net2[5:0]}
+N 1020 -790 1080 -790 {lab=net1[5:0]}
 N 1020 -750 1080 -750 {lab=C2_B[5:0]}
-N 1020 -770 1080 -770 {lab=C1_B[5:0]}
+N 1020 -770 1080 -770 {lab=net2[5:0]}
 C {Counters_6bits.sym} 540 -590 0 0 {name=x5
 }
 C {Counters_regs_6bits.sym} 980 -560 0 0 {name=x6
@@ -330,15 +330,15 @@ C {lab_wire.sym} 30 -570 0 0 {name=p97 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 30 -550 0 0 {name=p99 sig_type=std_logic lab=VSS
 }
-C {lab_wire.sym} 940 -760 0 0 {name=p100 sig_type=std_logic lab=C0_B[5:0]
+C {lab_wire.sym} 940 -760 0 0 {name=p100 sig_type=std_logic lab=net1[5:0]
 }
-C {lab_wire.sym} 940 -740 0 0 {name=p102 sig_type=std_logic lab=C1_B[5:0]
+C {lab_wire.sym} 940 -740 0 0 {name=p102 sig_type=std_logic lab=net2[5:0]
 }
-C {lab_wire.sym} 940 -720 0 0 {name=p103 sig_type=std_logic lab=C2_B[5:0]
+C {lab_wire.sym} 940 -720 0 0 {name=p103 sig_type=std_logic lab=net3[5:0]
 }
-C {lab_wire.sym} 1020 -790 0 0 {name=p104 sig_type=std_logic lab=C0_B[5:0]
+C {lab_wire.sym} 1020 -790 0 0 {name=p104 sig_type=std_logic lab=net1[5:0]
 }
-C {lab_wire.sym} 1020 -770 0 0 {name=p105 sig_type=std_logic lab=C1_B[5:0]
+C {lab_wire.sym} 1020 -770 0 0 {name=p105 sig_type=std_logic lab=net2[5:0]
 }
-C {lab_wire.sym} 1020 -750 0 0 {name=p106 sig_type=std_logic lab=C2_B[5:0]
+C {lab_wire.sym} 1020 -750 0 0 {name=p106 sig_type=std_logic lab=net3[5:0]
 }
