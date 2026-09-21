@@ -1,18 +1,18 @@
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/GROTDC.sch
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/ADC8711.sch
 .subckt ADC8711 OUT VDD START STOP VSS RESET CTRL[2] CTRL[1] CTRL[0]
 *.PININFO START:I STOP:I RESET:I VDD:B VSS:B OUT:O CTRL[2:0]:I
-x5 DRV_RESET net1[5] net1[4] net1[3] net1[2] net1[1] net1[0] VDD K0 VSS net2[5] net2[4] net2[3] net2[2] net2[1] net2[0] K1 net3[5] net3[4]
-+ net3[3] net3[2] net3[1] net3[0] K2 Counters_6bits
+x5 DRV_RESET net1[5] net1[4] net1[3] net1[2] net1[1] net1[0] VDD K0 VSS net2[5] net2[4] net2[3] net2[2] net2[1] net2[0] K1 net3[5]
++ net3[4] net3[3] net3[2] net3[1] net3[0] K2 Counters_6bits
 x6 DRV_RESET D0[5] D0[4] D0[3] D0[2] D0[1] D0[0] VDD DECLK VSS D1[5] D1[4] D1[3] D1[2] D1[1] D1[0] D2[5] D2[4] D2[3] D2[2] D2[1]
-+ D2[0] net1[5] net1[4] net1[3] net1[2] net1[1] net1[0] net2[5] net2[4] net2[3] net2[2] net2[1] net2[0] net3[5] net3[4] net3[3] net3[2] net3[1] net3[0]
-+ Counters_regs_6bits
++ D2[0] net1[5] net1[4] net1[3] net1[2] net1[1] net1[0] net2[5] net2[4] net2[3] net2[2] net2[1] net2[0] net3[5] net3[4] net3[3] net3[2]
++ net3[1] net3[0] Counters_regs_6bits
 x7 S1[5] S1[4] S1[3] S1[2] S1[1] S1[0] D0[5] D0[4] D0[3] D0[2] D0[1] D0[0] VDD COUT1 D1[5] D1[4] D1[3] D1[2] D1[1] D1[0] VSS VSS
 + Counter_FA_6bits
 x8 S2[6] S2[5] S2[4] S2[3] S2[2] S2[1] S2[0] COUT1 S1[5] S1[4] S1[3] S1[2] S1[1] S1[0] VDD COUT2 VSS D2[5] D2[4] D2[3] D2[2] D2[1]
 + D2[0] VSS VSS Counter_FA_7bits
 x9 DRV_RESET ADDER[7] ADDER[6] ADDER[5] ADDER[4] ADDER[3] ADDER[2] ADDER[1] ADDER[0] VDD DECLK2 VSS COUT2 S2[6] S2[5] S2[4] S2[3]
 + S2[2] S2[1] S2[0] Counters_FA_regs_7bits
-x1 VDD DRV_START EN net4 DRV_STOP VSS SR_Latch
+x1 VDD DRV_START EN net1 DRV_STOP VSS SR_Latch
 x2 VDD EN IN0 IN1 VSS IN2 GRO
 x3 K0 IN0 VDD IN1 VSS K1 K2 IN2 Modi_Buffers
 x10 START VDD DRV_START VSS STOP DRV_STOP RESET DRV_RESET OUT1 MUX_ADDER DRV_CTRL[2] DRV_CTRL[1] DRV_CTRL[0] CTRL[2] CTRL[1]
@@ -30,8 +30,8 @@ x18 RESET VDD VSS sg13g2_hv_antennanp
 .ends
 
 * expanding   symbol:  Counters_6bits.sym # of pins=9
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counters_6bits.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counters_6bits.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counters_6bits.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counters_6bits.sch
 .subckt Counters_6bits RESET C0_B[5] C0_B[4] C0_B[3] C0_B[2] C0_B[1] C0_B[0] VDD K0 VSS C1_B[5] C1_B[4] C1_B[3] C1_B[2] C1_B[1]
 + C1_B[0] K1 C2_B[5] C2_B[4] C2_B[3] C2_B[2] C2_B[1] C2_B[0] K2
 *.PININFO VDD:B VSS:B K0:I K1:I K2:I RESET:I C0_B[5:0]:O C1_B[5:0]:O C2_B[5:0]:O
@@ -42,8 +42,8 @@ x7 C2_B[0] K2 VDD C2_B[1] C2_B[2] VSS RESET C2_B[3] C2_B[4] C2_B[5] 6bits_counte
 
 
 * expanding   symbol:  Counters_regs_6bits.sym # of pins=10
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counters_regs_6bits.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counters_regs_6bits.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counters_regs_6bits.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counters_regs_6bits.sch
 .subckt Counters_regs_6bits RESET D0_B[5] D0_B[4] D0_B[3] D0_B[2] D0_B[1] D0_B[0] VDD CLK VSS D1_B[5] D1_B[4] D1_B[3] D1_B[2]
 + D1_B[1] D1_B[0] D2_B[5] D2_B[4] D2_B[3] D2_B[2] D2_B[1] D2_B[0] C0_B[5] C0_B[4] C0_B[3] C0_B[2] C0_B[1] C0_B[0] C1_B[5] C1_B[4] C1_B[3]
 + C1_B[2] C1_B[1] C1_B[0] C2_B[5] C2_B[4] C2_B[3] C2_B[2] C2_B[1] C2_B[0]
@@ -70,8 +70,8 @@ x18 VDD CLK RESET VSS D2_B[5] net18 C2_B[5] FF_D
 
 
 * expanding   symbol:  Counter_FA_6bits.sym # of pins=7
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counter_FA_6bits.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counter_FA_6bits.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counter_FA_6bits.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counter_FA_6bits.sch
 .subckt Counter_FA_6bits S[5] S[4] S[3] S[2] S[1] S[0] A[5] A[4] A[3] A[2] A[1] A[0] VDD COUT B[5] B[4] B[3] B[2] B[1] B[0] VSS
 + CIN
 *.PININFO VDD:B VSS:B A[5:0]:I B[5:0]:I CIN:I S[5:0]:O COUT:O
@@ -85,8 +85,8 @@ x5 A[5] VDD B[5] S[5] VSS net5 COUT FA
 
 
 * expanding   symbol:  Counter_FA_7bits.sym # of pins=7
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counter_FA_7bits.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counter_FA_7bits.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counter_FA_7bits.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counter_FA_7bits.sch
 .subckt Counter_FA_7bits S[6] S[5] S[4] S[3] S[2] S[1] S[0] A[6] A[5] A[4] A[3] A[2] A[1] A[0] VDD COUT B[6] B[5] B[4] B[3] B[2]
 + B[1] B[0] VSS CIN
 *.PININFO VDD:B VSS:B A[6:0]:I B[6:0]:I CIN:I S[6:0]:O COUT:O
@@ -101,8 +101,8 @@ x7 A[6] VDD B[6] S[6] VSS net6 COUT FA
 
 
 * expanding   symbol:  Counters_FA_regs_7bits.sym # of pins=6
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counters__FA_regs_7bits.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Counters__FA_regs_7bits.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counters_FA_regs_7bits.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Counters_FA_regs_7bits.sch
 .subckt Counters_FA_regs_7bits RESET D[7] D[6] D[5] D[4] D[3] D[2] D[1] D[0] VDD CLK VSS S[7] S[6] S[5] S[4] S[3] S[2] S[1] S[0]
 *.PININFO VDD:B VSS:B RESET:I S[7:0]:I D[7:0]:O CLK:I
 x8 VDD CLK RESET VSS D[0] net1 S[0] FF_D
@@ -117,8 +117,8 @@ x7 VDD CLK RESET VSS D[7] net8 S[7] FF_D
 
 
 * expanding   symbol:  SR_Latch.sym # of pins=6
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/SR_Latch.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/SR_Latch.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/SR_Latch.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/SR_Latch.sch
 .subckt SR_Latch VDD VS QN QP VR VSS
 *.PININFO VDD:B VSS:B VS:I VR:I QP:O QN:O
 x1 VDD QN VS QP VSS NOR
@@ -127,8 +127,8 @@ x2 VDD QP QN VR VSS NOR
 
 
 * expanding   symbol:  GRO.sym # of pins=6
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/GRO.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/GRO.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/GRO.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/GRO.sch
 .subckt GRO VDD EN K0 K1 VSS K2
 *.PININFO EN:I VDD:B VSS:B K0:O K1:O K2:O
 x2 S K0 K2 VSS INV3
@@ -141,30 +141,30 @@ x6[3] VDD net2 net1 VSS INV_D1
 x6[2] VDD net2 net1 VSS INV_D1
 x6[1] VDD net2 net1 VSS INV_D1
 x6[0] VDD net2 net1 VSS INV_D1
-x7[7] VDD EN_N net2 VSS INV_D1
-x7[6] VDD EN_N net2 VSS INV_D1
-x7[5] VDD EN_N net2 VSS INV_D1
-x7[4] VDD EN_N net2 VSS INV_D1
-x7[3] VDD EN_N net2 VSS INV_D1
-x7[2] VDD EN_N net2 VSS INV_D1
-x7[1] VDD EN_N net2 VSS INV_D1
-x7[0] VDD EN_N net2 VSS INV_D1
-x8[15] VDD G EN_N VSS INV_D1
-x8[14] VDD G EN_N VSS INV_D1
-x8[13] VDD G EN_N VSS INV_D1
-x8[12] VDD G EN_N VSS INV_D1
-x8[11] VDD G EN_N VSS INV_D1
-x8[10] VDD G EN_N VSS INV_D1
-x8[9] VDD G EN_N VSS INV_D1
-x8[8] VDD G EN_N VSS INV_D1
-x8[7] VDD G EN_N VSS INV_D1
-x8[6] VDD G EN_N VSS INV_D1
-x8[5] VDD G EN_N VSS INV_D1
-x8[4] VDD G EN_N VSS INV_D1
-x8[3] VDD G EN_N VSS INV_D1
-x8[2] VDD G EN_N VSS INV_D1
-x8[1] VDD G EN_N VSS INV_D1
-x8[0] VDD G EN_N VSS INV_D1
+x7[7] VDD net3 net2 VSS INV_D1
+x7[6] VDD net3 net2 VSS INV_D1
+x7[5] VDD net3 net2 VSS INV_D1
+x7[4] VDD net3 net2 VSS INV_D1
+x7[3] VDD net3 net2 VSS INV_D1
+x7[2] VDD net3 net2 VSS INV_D1
+x7[1] VDD net3 net2 VSS INV_D1
+x7[0] VDD net3 net2 VSS INV_D1
+x8[15] VDD G net3 VSS INV_D1
+x8[14] VDD G net3 VSS INV_D1
+x8[13] VDD G net3 VSS INV_D1
+x8[12] VDD G net3 VSS INV_D1
+x8[11] VDD G net3 VSS INV_D1
+x8[10] VDD G net3 VSS INV_D1
+x8[9] VDD G net3 VSS INV_D1
+x8[8] VDD G net3 VSS INV_D1
+x8[7] VDD G net3 VSS INV_D1
+x8[6] VDD G net3 VSS INV_D1
+x8[5] VDD G net3 VSS INV_D1
+x8[4] VDD G net3 VSS INV_D1
+x8[3] VDD G net3 VSS INV_D1
+x8[2] VDD G net3 VSS INV_D1
+x8[1] VDD G net3 VSS INV_D1
+x8[0] VDD G net3 VSS INV_D1
 MM2 S G VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=32
 MM4 K2 G VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=16
 MM3 K0 G VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=16
@@ -173,8 +173,8 @@ MM5 K1 G VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=16
 
 
 * expanding   symbol:  Modi_Buffers.sym # of pins=8
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Modi_Buffers.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Modi_Buffers.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Modi_Buffers.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Modi_Buffers.sch
 .subckt Modi_Buffers K0 IN0 VDD IN1 VSS K1 K2 IN2
 *.PININFO IN0:I IN1:I IN2:I K0:O K1:O K2:O VDD:B VSS:B
 x1[1] VDD net1 IN0 VSS INV_D1
@@ -196,8 +196,8 @@ x2 VDD net3 K2 VSS INV05
 
 
 * expanding   symbol:  Buffers_IO.sym # of pins=12
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Buffers_IO.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Buffers_IO.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Buffers_IO.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Buffers_IO.sch
 .subckt Buffers_IO DRV_START VDD START VSS DRV_STOP STOP DRV_RESET RESET DRV_ADDER ADDER DRV_CTRL[2] DRV_CTRL[1] DRV_CTRL[0]
 + CTRL[2] CTRL[1] CTRL[0]
 *.PININFO DRV_START:I VDD:B VSS:B DRV_STOP:I DRV_RESET:I ADDER:I START:O STOP:O RESET:O DRV_ADDER:O CTRL[2:0]:I DRV_CTRL[2:0]:O
@@ -212,8 +212,8 @@ x7 VDD CTRL[0] VSS DRV_CTRL[0] Buffers
 
 
 * expanding   symbol:  MUX_8_1_NI.sym # of pins=12
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/MUX_8_1_NI.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/MUX_8_1_NI.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/MUX_8_1_NI.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/MUX_8_1_NI.sch
 .subckt MUX_8_1_NI VINA VINB VDD VOUT CTRL[2] CTRL[1] CTRL[0] VINC VSS VIND VINE VINF VING VINH
 *.PININFO VSS:B VOUT:O VDD:B VINA:I VINB:I VINC:I VIND:I CTRL[2:0]:I VINE:I VINF:I VING:I VINH:I
 x7 VDD net1 VOUT CTRL[2] net2 VSS MUX_2_1_NI
@@ -223,8 +223,8 @@ x9 VINE VINF VDD net2 CTRL[1] CTRL[0] VING VSS VINH MUX_4_1_NI
 
 
 * expanding   symbol:  delay_cell_long.sym # of pins=6
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_cell_long.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_cell_long.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/delay_cell_long.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/delay_cell_long.sch
 .subckt delay_cell_long VDD IN OUT1 OUT3 VSS CTRL[2] CTRL[1] CTRL[0]
 *.PININFO IN:I VDD:B VSS:B OUT1:O OUT3:O CTRL[2:0]:I
 x1 OUT00 IN VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog
@@ -236,8 +236,8 @@ x5 OUT1 OUT0 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog
 
 
 * expanding   symbol:  Buffers_adder.sym # of pins=4
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Buffers_adder.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Buffers_adder.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Buffers_adder.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Buffers_adder.sch
 .subckt Buffers_adder VDD IN VSS OUT
 *.PININFO IN:I VDD:B VSS:B OUT:O
 x5[1] VDD net1 IN VSS INV_D1
@@ -285,8 +285,8 @@ DD2 A VDD dpantenna l=1.34u w=1.05u
 
 
 * expanding   symbol:  6bits_counter.sym # of pins=10
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/6bits_counter.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/6bits_counter.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/6bits_counter.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/6bits_counter.sch
 .subckt 6bits_counter B0 CLK VDD B1 B2 VSS RESET B3 B4 B5
 *.PININFO VDD:B VSS:B CLK:I RESET:I B0:O B1:O B2:O B3:O B4:O B5:O
 x1 VDD CLK RESET VSS net1 B0 B0 FF_D
@@ -299,8 +299,8 @@ x6 VDD net5 RESET VSS net6 B5 B5 FF_D
 
 
 * expanding   symbol:  FF_D.sym # of pins=7
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/FF_D.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/FF_D.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/FF_D.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/FF_D.sch
 .subckt FF_D VDD VCLK VRESET VSS VQ VQN VD
 *.PININFO VDD:B VSS:B VCLK:I VD:I VRESET:I VQ:O VQN:O
 x1 VDD net4 VD VSS INV_D1
@@ -320,8 +320,8 @@ x13 VDD VQN VQ VSS INV_D1
 
 
 * expanding   symbol:  FA.sym # of pins=7
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/FA.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/FA.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/FA.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/FA.sch
 .subckt FA A VDD B S VSS CIN CSAL
 *.PININFO B:I A:I CIN:I S:O CSAL:O VDD:B VSS:B
 x1 net2 B VDD CIN VSS XOR
@@ -335,8 +335,8 @@ x4 VDD CIN net5 A VSS AND
 
 
 * expanding   symbol:  NOR.sym # of pins=5
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/NOR.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/NOR.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NOR.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NOR.sch
 .subckt NOR VDD VOUT VA VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 MM1 VOUT VA VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
@@ -347,23 +347,23 @@ MM4 net1 VA VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1
 
 
 * expanding   symbol:  INV3.sym # of pins=4
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV3.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV3.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV3.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV3.sch
 .subckt INV3 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
-x2 VDD net2 VIN VSS INV_D1
-x1[1] VDD net1 net2 VSS INV_D1
-x1[0] VDD net1 net2 VSS INV_D1
-x3[3] VDD VOUT net1 VSS INV_D1
-x3[2] VDD VOUT net1 VSS INV_D1
-x3[1] VDD VOUT net1 VSS INV_D1
-x3[0] VDD VOUT net1 VSS INV_D1
+x2 VDD net1 VIN VSS INV_D1
+x1[1] VDD net2 net1 VSS INV_D1
+x1[0] VDD net2 net1 VSS INV_D1
+x3[3] VDD VOUT net2 VSS INV_D1
+x3[2] VDD VOUT net2 VSS INV_D1
+x3[1] VDD VOUT net2 VSS INV_D1
+x3[0] VDD VOUT net2 VSS INV_D1
 .ends
 
 
 * expanding   symbol:  INV_D1.sym # of pins=4
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D1.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D1.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D1.sch
 .subckt INV_D1 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
@@ -372,8 +372,8 @@ MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
 
 
 * expanding   symbol:  INV_D2.sym # of pins=4
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D2.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D2.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D2.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D2.sch
 .subckt INV_D2 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.3u l=0.13u ng=1
@@ -382,8 +382,8 @@ MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
 
 
 * expanding   symbol:  INV05.sym # of pins=4
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV05.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV05.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV05.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV05.sch
 .subckt INV05 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM1 net1 VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
@@ -393,8 +393,8 @@ MM2 VOUT VIN net1 VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
 
 
 * expanding   symbol:  Buffers.sym # of pins=4
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Buffers.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/Buffers.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Buffers.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/Buffers.sch
 .subckt Buffers VDD IN VSS OUT
 *.PININFO IN:I VDD:B VSS:B OUT:O
 x1[1] VDD net1 IN VSS INV_D1
@@ -406,8 +406,8 @@ x3 VDD net1 OUT VSS INV05
 
 
 * expanding   symbol:  MUX_2_1_NI.sym # of pins=6
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/MUX_2_1_NI.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/MUX_2_1_NI.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/MUX_2_1_NI.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/MUX_2_1_NI.sch
 .subckt MUX_2_1_NI VDD VINA VOUT VS VINB VSS
 *.PININFO VOUT:O VINA:I VINB:I VS:I VDD:B VSS:B
 x6[1] VSB VSS VOUT VINA VDD VS TG_2C
@@ -419,8 +419,8 @@ x1 VDD VSB VS VSS INV_D3
 
 
 * expanding   symbol:  MUX_4_1_NI.sym # of pins=8
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/MUX_4_1_NI.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/MUX_4_1_NI.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/MUX_4_1_NI.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/MUX_4_1_NI.sch
 .subckt MUX_4_1_NI VINA VINB VDD VOUT VS[1] VS[0] VINC VSS VIND
 *.PININFO VOUT:O VDD:B VSS:B VINA:I VINB:I VINC:I VIND:I VS[1:0]:I
 x3 VDD VINA net1 VS[0] VINB VSS MUX_2_1_NI
@@ -430,8 +430,8 @@ x2 VDD net1 VOUT VS[1] net2 VSS MUX_2_1_NI
 
 
 * expanding   symbol:  delay_prog.sym # of pins=5
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/delay_prog.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/delay_prog.sch
 .subckt delay_prog OUT IN VDD VSS CTRL[2] CTRL[1] CTRL[0]
 *.PININFO IN:I VDD:B VSS:B CTRL[2:0]:I OUT:O
 x1 OUT0 IN VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
@@ -450,8 +450,8 @@ x12 OUT OUT10 VDD VSS CTRL[2] CTRL[1] CTRL[0] delay_prog_sub
 
 
 * expanding   symbol:  TG_2C.sym # of pins=6
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/TG_2C.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/TG_2C.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/TG_2C.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/TG_2C.sch
 .subckt TG_2C VCTRLN VSS VOUT VIN VDD VCTRLP
 *.PININFO VCTRLN:B VCTRLP:B VOUT:O VIN:I VSS:B VDD:B
 MM1 VOUT VCTRLN VIN VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
@@ -460,8 +460,8 @@ MM2 VOUT VCTRLP VIN VDD sg13_lv_pmos w=0.15u l=0.13u ng=1 m=2
 
 
 * expanding   symbol:  NAND_D2.sym # of pins=5
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/NAND_D2.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/NAND_D2.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NAND_D2.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NAND_D2.sch
 .subckt NAND_D2 VDD VA VOUT VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 MM1 net1 VB VSS VSS sg13_lv_nmos w=0.9u l=0.13u ng=1
@@ -472,8 +472,8 @@ MM4 VOUT VA VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1
 
 
 * expanding   symbol:  NAND_D3.sym # of pins=5
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/NAND_D3.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/NAND_D3.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NAND_D3.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NAND_D3.sch
 .subckt NAND_D3 VDD VA VOUT VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 MM1 net1 VB VSS VSS sg13_lv_nmos w=1.35u l=0.13u ng=1
@@ -484,8 +484,8 @@ MM4 VOUT VA VDD VDD sg13_lv_pmos w=0.45u l=0.13u ng=1
 
 
 * expanding   symbol:  INV_D3.sym # of pins=4
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D3.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/INV_D3.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D3.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/INV_D3.sch
 .subckt INV_D3 VDD VOUT VIN VSS
 *.PININFO VDD:B VSS:B VOUT:O VIN:I
 MM1 VOUT VIN VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1 m=3
@@ -494,8 +494,8 @@ MM2 VOUT VIN VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1 m=6
 
 
 * expanding   symbol:  XOR.sym # of pins=5
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/XOR.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/XOR.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/XOR.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/XOR.sch
 .subckt XOR OUT A VDD B VSS
 *.PININFO VDD:B VSS:B A:I B:I OUT:O
 x2 VDD net3 net2 B VSS AND
@@ -507,8 +507,8 @@ x3 VDD A net4 net1 VSS AND
 
 
 * expanding   symbol:  OR.sym # of pins=5
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/OR.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/OR.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/OR.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/OR.sch
 .subckt OR VDD VOUT VA VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 x2 VDD VOUT net1 VSS INV_D1
@@ -517,8 +517,8 @@ x1 VDD net1 VA VB VSS NOR
 
 
 * expanding   symbol:  AND.sym # of pins=5
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/AND.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/AND.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/AND.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/AND.sch
 .subckt AND VDD VA VOUT VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 x1 VDD VA net1 VB VSS NAND
@@ -527,8 +527,8 @@ x2 VDD VOUT net1 VSS INV_D1
 
 
 * expanding   symbol:  delay_prog_sub.sym # of pins=5
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog_sub.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/delay_prog_sub.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/delay_prog_sub.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/delay_prog_sub.sch
 .subckt delay_prog_sub OUT IN VDD VSS CTRL[2] CTRL[1] CTRL[0]
 *.PININFO IN:I OUT:O VDD:B VSS:B CTRL[2:0]:I
 x1 VDD net1 IN VSS INV_D1
@@ -543,8 +543,8 @@ x8 VDD CTRLN[2] CTRL[2] VSS INV_D1
 
 
 * expanding   symbol:  NAND.sym # of pins=5
-** sym_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/NAND.sym
-** sch_path: /home/eamtastudent/IHP__ADC8711/ADC8711-main/schematic/xschem/NAND.sch
+** sym_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NAND.sym
+** sch_path: $SCRIPT_DIR/ADC8711-main/schematic/xschem/NAND.sch
 .subckt NAND VDD VA VOUT VB VSS
 *.PININFO VDD:B VSS:B VA:I VB:I VOUT:O
 MM1 net1 VB VSS VSS sg13_lv_nmos w=0.45u l=0.13u ng=1
