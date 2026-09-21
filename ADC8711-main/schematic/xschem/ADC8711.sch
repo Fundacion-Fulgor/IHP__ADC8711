@@ -107,8 +107,10 @@ N -180 -810 -140 -810 {lab=STOP}
 N -180 -770 -140 -770 {lab=RESET}
 N 880 -740 940 -740 {lab=net2[5:0]}
 N 1020 -790 1080 -790 {lab=net1[5:0]}
-N 1020 -750 1080 -750 {lab=C2_B[5:0]}
+N 1020 -750 1080 -750 {lab=net3[5:0]}
 N 1020 -770 1080 -770 {lab=net2[5:0]}
+N 20 -470 50 -470 {lab=VSS}
+N 20 -490 50 -490 {lab=VDD}
 C {Counters_6bits.sym} 540 -590 0 0 {name=x5
 }
 C {Counters_regs_6bits.sym} 980 -560 0 0 {name=x6
@@ -334,4 +336,9 @@ C {lab_wire.sym} 1020 -790 0 0 {name=p104 sig_type=std_logic lab=net1[5:0]
 C {lab_wire.sym} 1020 -770 0 0 {name=p105 sig_type=std_logic lab=net2[5:0]
 }
 C {lab_wire.sym} 1020 -750 0 0 {name=p106 sig_type=std_logic lab=net3[5:0]
+}
+C {fillers.sym} -130 -480 0 0 {name=x19[899:0]}
+C {lab_wire.sym} 50 -490 0 0 {name=p97 sig_type=std_logic lab=VDD
+}
+C {lab_wire.sym} 50 -470 0 0 {name=p99 sig_type=std_logic lab=VSS
 }
