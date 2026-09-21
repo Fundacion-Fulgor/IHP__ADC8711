@@ -20,9 +20,8 @@ N 1320 -740 1360 -740 {lab=D1[5:0]}
 N 1320 -720 1340 -720 {lab=D2[5:0]}
 N 1040 -710 1080 -710 {lab=DECLK}
 N 1060 -690 1080 -690 {lab=DRV_RESET}
-N 880 -760 940 -760 {lab=#net1}
-N 880 -740 960 -740 {lab=#net2}
-N 880 -720 980 -720 {lab=#net3}
+N 880 -760 940 -760 {lab=C0_B[5:0]}
+N 880 -720 940 -720 {lab=C2_B[5:0]}
 N 620 -690 640 -690 {lab=DRV_RESET}
 N 600 -720 640 -720 {lab=K2}
 N 580 -740 640 -740 {lab=K1}
@@ -30,12 +29,6 @@ N 560 -760 640 -760 {lab=K0}
 N 160 -520 200 -520 {lab=D0[5:0]}
 N 160 -470 200 -470 {lab=D1[5:0]}
 N 160 -420 200 -420 {lab=VSS}
-N 940 -790 940 -760 {lab=#net1}
-N 940 -790 1080 -790 {lab=#net1}
-N 960 -770 960 -740 {lab=#net2}
-N 960 -770 1080 -770 {lab=#net2}
-N 980 -750 980 -720 {lab=#net3}
-N 980 -750 1080 -750 {lab=#net3}
 N 440 -490 460 -490 {lab=S1[5:0]}
 N 440 -450 460 -450 {lab=COUT1}
 N 620 -420 640 -420 {lab=VSS}
@@ -112,8 +105,12 @@ N -180 -890 -140 -890 {lab=CTRL[2]}
 N -180 -850 -140 -850 {lab=START}
 N -180 -810 -140 -810 {lab=STOP}
 N -180 -770 -140 -770 {lab=RESET}
-N -0 -550 30 -550 {lab=#net4}
+N -0 -550 30 -550 {lab=VSS}
 N 0 -570 30 -570 {lab=VDD}
+N 880 -740 940 -740 {lab=C1_B[5:0]}
+N 1020 -790 1080 -790 {lab=C0_B[5:0]}
+N 1020 -750 1080 -750 {lab=C2_B[5:0]}
+N 1020 -770 1080 -770 {lab=C1_B[5:0]}
 C {Counters_6bits.sym} 540 -590 0 0 {name=x5
 }
 C {Counters_regs_6bits.sym} 980 -560 0 0 {name=x6
@@ -176,7 +173,7 @@ C {lab_wire.sym} 1200 -580 0 0 {name=p36 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 1200 -360 0 0 {name=p37 sig_type=std_logic lab=VSS
 }
-C {Counters__FA_regs_7bits.sym} 1040 -350 0 0 {name=x9
+C {Counters_FA_regs_7bits.sym} 1040 -350 0 0 {name=x9
 }
 C {lab_wire.sym} 1360 -470 0 1 {name=p39 sig_type=std_logic lab=ADDER[7:0]
 }
@@ -332,4 +329,16 @@ C {fillers.sym} -150 -560 0 0 {name=x19[799:0]}
 C {lab_wire.sym} 30 -570 0 0 {name=p97 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} 30 -550 0 0 {name=p99 sig_type=std_logic lab=VSS
+}
+C {lab_wire.sym} 940 -760 0 0 {name=p100 sig_type=std_logic lab=C0_B[5:0]
+}
+C {lab_wire.sym} 940 -740 0 0 {name=p102 sig_type=std_logic lab=C1_B[5:0]
+}
+C {lab_wire.sym} 940 -720 0 0 {name=p103 sig_type=std_logic lab=C2_B[5:0]
+}
+C {lab_wire.sym} 1020 -790 0 0 {name=p104 sig_type=std_logic lab=C0_B[5:0]
+}
+C {lab_wire.sym} 1020 -770 0 0 {name=p105 sig_type=std_logic lab=C1_B[5:0]
+}
+C {lab_wire.sym} 1020 -750 0 0 {name=p106 sig_type=std_logic lab=C2_B[5:0]
 }
